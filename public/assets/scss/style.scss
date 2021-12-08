@@ -1,0 +1,187 @@
+/*-------------------------------------------------------------------
+  ===== Table of Contents =====
+
+  * Bootstrap functions
+  * Template variables
+  * SCSS Compass Functions
+  * Boostrap Main SCSS
+  * Template mixins
+    + Animation Mixins
+    + Background Mixins
+    + Badge Mixins
+    + Button Mixins
+    + Miscellaneous Mixins
+    + BlockQuote Mixins
+    + Cards Mixins
+    + Color Functions Mixins
+    + Tooltips
+    + popovers
+  * Core Styles
+    + Reset Styles
+    + Fonts
+    + Functions
+    + Backgrounds
+    + Typography
+    + Miscellaneous
+    + Footer
+    + Layouts
+    + Utilities
+    + Demo styles
+  * Components
+    + Accordions
+    + Badges
+    + Bootstrap Alerts
+    + Boostrap Progress
+    + Buttons
+    + Breadcrumbs
+    + Cards
+    + Checkboxes and Radios
+    + Dropdowns
+    + Forms
+    + Google maps
+    + Icons
+    + Loaders
+    + Lists
+    + Modals
+    + Pagination
+    + Popover
+    + Preview
+    + Tables
+    + Tabs
+    + Timeline
+    + Todo List
+    + Tooltips
+    + User Profile
+    + Pricing table
+  * Email
+    + Mail Sidebar
+    + Mail List Container
+    + Message Content
+  * Plugin Overrides
+    + Ace Editor
+    + Avgrund Popup
+    + Bootstrap Tour
+    + Chartist
+    + CodeMirror
+    + Colcade
+    + Colorpicker
+    + Context Menu
+    + Data Tables
+    + Datepicker
+    + Dropify
+    + Dropzone
+    + Flot chart
+    + Full Calendar
+    + Google Charts
+    + Icheck
+    + Jquery File Upload
+    + Js-grid
+    + Jvectormap
+    + Light Gallery
+    + Listify
+    + No-ui-slider
+    + Owl-carousel
+    + Progressbar-js
+    + Pws-tabs
+    + Quill Editor
+    + Rating
+    + Select2
+    + Summernote Editor
+    + SweetAlert
+    + Switchery
+    + Tags
+    + TinyMCE Editor
+    + Toast
+    + Typeahead
+    + Wysi Editor
+    + X-editable
+    + Wizard
+  * Landing screens
+    + Auth
+    + Lock Screen
+---------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------*/
+/* === Import Bootstrap functions and variables === */
+@import '//node_modules/bootstrap/scss/_functions.scss';
+@import '//node_modules/bootstrap/scss/_variables.scss';
+
+/*-------------------------------------------------------------------*/
+/* === Import template variables === */
+@import '//assets/scss/variables';
+
+/*--------------------c-----.------------------------------n------------*/
+/* === SCSS Compass Functions === */
+@import '//node_modules/compass-mixins/lib/compass';
+@import "//node_modules/compass-mixins/lib/animate";
+
+/*-------------------------------------------------------------------*/
+/* === Boostrap Main SCSS === */
+@import "//node_modules/bootstrap/scss/bootstrap";
+
+/*-------------------------------------------------------------------*/
+/* === Template mixins === */
+@import "//assets/scss/components/mixins/misc";
+@import "//assets/scss/components/mixins/animation";
+@import "//assets/scss/components/mixins/background";
+@import "//assets/scss/components/mixins/badges";
+@import "//assets/scss/components/mixins/blockqoute";
+@import "//assets/scss/components/mixins/buttons";
+@import "//assets/scss/components/mixins/breadcrumbs";
+@import "//assets/scss/components/mixins/cards";
+@import "//assets/scss/components/mixins/no-ui-slider";
+@import "//assets/scss/components/mixins/pagination";
+@import "//assets/scss/components/mixins/popovers";
+@import "//assets/scss/components/mixins/tooltips";
+
+/*-------------------------------------------------------------------*/
+/* === Core Styles === */
+@import "//assets/scss/components/reset";
+@import "//assets/scss/components/fonts";
+@import "//assets/scss/components/functions";
+@import "//assets/scss/components/background";
+@import "//assets/scss/components/typography";
+@import "//assets/scss/components/misc";
+@import "//assets/scss/components/footer";
+@import "//assets/scss/components/utilities";
+@import "//assets/scss/components/demo";
+@import "//assets/scss/components/dashboard";
+
+/*--------------------------------------------------------------------*/
+/* === Components === */
+@import "//assets/scss/components/badges";
+@import "//assets/scss/components/buttons";
+@import "//assets/scss/components/cards";
+@import "//assets/scss/components/checkbox-radio";
+@import "//assets/scss/components/dropdown";
+@import "//assets/scss/components/forms";
+@import "//assets/scss/components/icons";
+@import "//assets/scss/components/loaders/loaders";
+@import "//assets/scss/components/preview";
+@import "//assets/scss/components/tables";
+@import "//assets/scss/components/tabs";
+@import "//assets/scss/components/todo-list";
+
+/*-------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------*/
+/* === Plugin overrides === */
+@import "//assets/scss/components/plugin-overrides/ace";
+@import "//assets/scss/components/plugin-overrides/avgrund";
+@import "//assets/scss/components/plugin-overrides/codemirror";
+@import "//assets/scss/components/plugin-overrides/datepicker";
+@import "//assets/scss/components/plugin-overrides/flot-chart";
+@import "//assets/scss/components/plugin-overrides/full-calendar";
+@import "//assets/scss/components/plugin-overrides/jquery-file-upload";
+@import "//assets/scss/components/plugin-overrides/pws-tabs";
+@import "//assets/scss/components/plugin-overrides/select2";
+@import "//assets/scss/components/plugin-overrides/typeahead";
+@import "//assets/scss/components/plugin-overrides/lists";
+
+/*-------------------------------------------------------------------*/
+
+@import "//assets/scss/settings-panel";
+@import "//assets/scss/navbar";
+@import "//assets/scss/sidebar";
+@import "//assets/scss/layouts";
+@import "//assets/scss/vertical/vertical-wrapper";

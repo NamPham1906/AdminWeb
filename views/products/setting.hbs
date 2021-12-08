@@ -1,0 +1,104 @@
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">Products Setting</h3>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Products</a></li>
+          <li class="breadcrumb-item active" aria-current="page"> Products Setting </li>
+        </ol>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-description"> Page 1 </p>
+            </p>
+            <form class="form-sample" action="/product/setting/filter" method="POST">
+              <div class="row">
+                <label class="col-sm-3 col-form-label">Product Name</label>
+                <div class="col-sm-9">
+                  <input type="text" name="product_name" placeholder="Product Name" class="form-control" value="">
+                </div>
+                <label class="col-sm-3 col-form-label">Product Type</label>
+                <div class="col-sm-9">
+                  <input type="text" name="product_type" placeholder="Product Type" class="form-control" value="">
+                </div>
+                <label class="col-sm-3 col-form-label">Sold</label>
+                <div class="col-sm-9">
+                  <input type="number" name="sold" placeholder="Sold" class="form-control" value="">
+                </div>
+                <label class="col-sm-3 col-form-label">Quantity</label>
+                <div class="col-sm-9">
+                  <input type="number" name="quantity" placeholder="Quantity" class="form-control" value="">
+                </div>
+                <label class="col-sm-3 col-form-label">Cost</label>
+                <div class="col-sm-9">
+                  <input type="text" name="cost" placeholder="Cost" class="form-control" value="">
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary float-right m-3" name="product_id" value=""> Search
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Product Type</th>
+                    <th>Quantity</th>
+                    <th>Cost</th>
+                    <th>Importdate</th>
+                    <th>Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each products}}
+                  <tr>
+                    <td class="py-1">
+                      <img src="{{IMAGE}}" alt="image">
+                    </td>
+                    <td>{{PRODUCT_NAME}}</td>
+                    <td>{{PRODUCT_TYPE}}</td>
+                    <td>{{QUANTITY}}</td>
+                    <td>{{PRICE}}</td>
+                    <td>{{IMPORTDATE}}</td>
+                    <th>
+                      <button type="submit" class="btn btn-primary mr-2">
+                        <a class="p-2" href="/product/setting/detail?product_id={{PRODUCT_ID}}"> Detail </a>
+                      </button>
+                    </th>
+                  </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row-12 d-flex">
+      <div class="mr-auto p-2">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="?page=1">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+            <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+            <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+            <li class="page-item"><a class="page-link" href="?page=4">4</a></li>
+            <li class="page-item"><a class="page-link" href="?page=5">5</a></li>
+            <li class="page-item"><a class="page-link" href="?page=6">6</a></li>
+            <li class="page-item"><a class="page-link" href="?page=7">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+      <button type="submit" class="btn btn-primary">
+        <a class="p-2" href="/product/setting/add"> Add New Product</a>
+      </button>
+    </div>
+
+  </div>

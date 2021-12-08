@@ -1,0 +1,113 @@
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">Create New Account</h3>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">User Accounts</a></li>
+          <li class="breadcrumb-item active" aria-current="page"> Create New Account </li>
+        </ol>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="col-12 grid-margin">
+        <div class="card">
+          <div class="card-body">
+            <form class="form-sample" action="/account/setting/detail/add" method="POST">
+              <p class="card-description">Personal Infomation</p>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">First Name</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="first_name" placeholder="First Name" class="form-control">
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Last Name</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="last_name" placeholder="Last Name" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">User Name</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="user_name" placeholder="User Name" class="form-control">
+                    </div>
+                  </div>
+                </div>
+     
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Email Address</label>
+                    <div class="col-sm-9">
+                      <input type="email" name="email" placeholder="Email" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Gender</label>
+                    <div class="col-sm-9">
+                      <select name="gender" class="form-control">
+                        <option value="MALE">Male</option>
+                        <option value="FEMALE">Female</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Date of Birth</label>
+                    <div class="col-sm-9">
+                      <input class="form-control" name="dateofbirth" type="date" placeholder="dd/mm/yyyy">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Upload Image</label>
+                    <div class="input-group col-sm-9">
+
+                      <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
+                      <span class="input-group-append">
+                        <button class="file-upload-browse btn btn-primary" type="button"> Upload </button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Password</label>
+                    <div class="col-sm-9">
+                      <input class="form-control" name="password" type="password" placeholder="Password">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Confirm Password</label>
+                    <div class="col-sm-9">
+                      <input class="form-control" type="password" placeholder="Confirm Password">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary mr-2" name="account_id" value=""> Submit </button>
+              <button class="btn btn-light">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>

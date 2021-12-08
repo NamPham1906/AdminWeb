@@ -1,0 +1,131 @@
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">Product</h3>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Product Detail</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Edit </li>
+        </ol>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="col-12 grid-margin">
+        <div class="card">
+          <div class="card-body">
+            <form class="form-sample" action="/product/setting/detail/update" method="POST">
+              <p class="card-description">Product information</p>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Image</label>
+                    <div class="col-sm-9">
+                      <img src="{{product.IMAGE}}" alt="image">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Upload Image</label>
+                    <div class="input-group col-sm-9">
+                      <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
+                      <span class="input-group-append">
+                        <button class="file-upload-browse btn btn-primary" type="button"> Upload </button>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Product Name</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="product_name" placeholder="Product Name" class="form-control"
+                        value="{{product.PRODUCT_NAME}}">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Product Type</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="product_type" placeholder="Product Type" class="form-control"
+                        value="{{product.PRODUCT_TYPE}}">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Sold</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="sold" placeholder="Sold" class="form-control" value="{{product.SOLD}}">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Quantity</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="quantity" placeholder="Quantity" class="form-control"
+                        value="{{product.QUANTITY}}">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Description </label>
+                    <div class="col-sm-9">
+                      <input type="text" name="description" placeholder="Product Type" class="form-control"
+                        value="{{product.DETAIL}}">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Cost</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="cost" placeholder="Cost" class="form-control" value="{{product.PRICE}}">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Import staff</label>
+                    <div class="col-sm-9">
+                      <select id="staff" name="importer" class="form-control">
+                        {{#each accounts}}
+                        <option value={{ADMIN_ID}}>
+                          <label>{{LASTNAME}}</label>
+                        </option>
+                        {{/each}}
+                      </select>
+                      <script type="text/javascript">
+                        var els = document.querySelector('#staff option[value={{product.IMPORTER}}]');
+                        if (els) {
+                          els.selected = true;
+                        }
+                      </script>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Importdate</label>
+                    <div class="col-sm-9">
+                      <input class="form-control" name="importdate" type="date" placeholder="dd/mm/yyyy"
+                        value="{{product.IMPORTDATE}}">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <button type="submit" class="btn btn-primary mr-2" name="product_id" value="{{product.PRODUCT_ID}}">
+                Update </button>
+              <button class="btn btn-light">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <form action="/product/setting/detail/delete" method="POST">
+      <button type="submit" class="btn btn-primary mr-2" name="product_id" value="{{product.PRODUCT_ID}}">
+        Delete
+      </button>
+    </form>
+  </div>

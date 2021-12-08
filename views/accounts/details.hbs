@@ -1,0 +1,126 @@
+<div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title">Your Account</h3>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Your Account</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Edit </li>
+                </ol>
+              </nav>
+            </div>
+            <div class="row">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <form class="form-sample">
+                      <p class="card-description">Personal Infomation</p>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">First Name</label>
+                            <div class="col-sm-9">
+                              <input type="text"   placeholder="First Name" class="form-control" value={{account.FIRSTNAME}}>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Last name</label>
+                            <div class="col-sm-9">
+                              <input type="text" placeholder="Last Name" class="form-control" value={{account.LASTNAME}}>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">User Name</label>
+                            <div class="col-sm-9">
+                              <input type="text" placeholder="User Name" class="form-control" value={{account.USERNAME}}>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Email Address</label>
+                            <div class="col-sm-9">
+                              <input type="email" placeholder="Email" class="form-control" value={{account.EMAIL}}>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Gender</label>
+                            <div class="col-sm-9">
+                              <select id="gender" name="gender" class="form-control">
+                                <option value="MALE" >Male</option>
+                                <option Value="FEMALE">Female</option>
+                              </select>
+                            </div>
+                            <script type="text/javascript">
+                              var els = document.querySelector('#gender option[value={{account.GENDER}}]');
+                              if (els) {
+                                els.selected = true;
+                              }
+                          </script>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Date of Birth</label>
+                            <div class="col-sm-9">
+                              <input class="form-control" type="date" placeholder="dd/mm/yyyy" value = {{account.DOB}}>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Address</label>
+                            <div class="col-sm-9">
+                              <input class="form-control" type="text" placeholder="Address" value = "Tran Hung Dao st, District 1, HCMC">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Upload Image</label>
+                            <div class="input-group col-sm-9">
+                              
+                              <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
+                              <span class="input-group-append">
+                                   <button class="file-upload-browse btn btn-primary" type="button"> Upload </button>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Password</label>
+                            <div class="col-sm-9">
+                              <input class="form-control" type="password" placeholder="Password" value={{account.PASS}}>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Confirm Password</label>
+                            <div class="col-sm-9">
+                              <input class="form-control" type="password" placeholder="Confirm Password">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary mr-2"> Lock This Account </button>
+                      <button type="submit" class="btn btn-primary mr-2"> Confirm </button>
+                      <button class="btn btn-light">Cancel</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              
+              
+            </div>
+          </div>
+  
