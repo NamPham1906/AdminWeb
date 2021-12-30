@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('ORDERS', {
+  return sequelize.define('orders', {
     ORDER_ID: {
       type: DataTypes.CHAR(5),
       allowNull: false,
@@ -8,7 +8,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     ORDER_DATE: {
       type: DataTypes.DATE,
-      allowNull: true
+      allowNull: false,
+      defaultValue: Sequelize.Sequelize.literal('CURRENT_TIMESTAMP')
     },
     ADDRESS: {
       type: DataTypes.STRING(100),
@@ -18,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.CHAR(5),
       allowNull: true,
       references: {
-        model: 'ADMINS',
+        model: 'admins',
         key: 'ADMIN_ID'
       }
     },
@@ -26,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.CHAR(5),
       allowNull: true,
       references: {
-        model: 'CLIENTS',
+        model: 'clients',
         key: 'CLIENT_ID'
       }
     },
@@ -36,7 +37,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'ORDERS',
+    tableName: 'orders',
     timestamps: false,
     indexes: [
       {
