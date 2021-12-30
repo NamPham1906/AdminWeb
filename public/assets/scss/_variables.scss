@@ -38,7 +38,7 @@ $colors: (
 );
 
 $theme-colors: (
-  primary: #3f50f6,
+  primary: #b0b435,
   secondary: #d8d8d8,
   success: #00cccd,
   info: #198ae3,
@@ -98,13 +98,13 @@ $sidebar-light-menu-active-color: theme-color(primary);
 $sidebar-light-menu-hover-bg: darken($sidebar-light-bg, 1%);
 $sidebar-light-menu-hover-color: darken($sidebar-light-menu-color, 10%);
 $sidebar-light-submenu-hover-color: darken($sidebar-light-submenu-color, 20%);
-$sidebar-light-menu-icon-color: #423a8e;
+$sidebar-light-menu-icon-color: #b0b435;
 $sidebar-light-menu-arrow-color: #9e9da0;
 $sidebar-light-menu-border-color: #c0bfcf;
 
 $sidebar-dark-bg: #18151e;
 $sidebar-dark-menu-color: $white;
-$sidebar-dark-menu-active-bg: #282037;
+$sidebar-dark-menu-active-bg: #b0b435;
 $sidebar-dark-menu-active-color: darken($white, 30%);
 $sidebar-dark-menu-hover-bg: lighten($sidebar-dark-bg, 10%);
 $sidebar-dark-menu-hover-color: color(white);
@@ -165,7 +165,7 @@ $modal-content-bg: $content-bg;
 ////////// MODALS VARIABLES //////////
 
 ///////// NAVBAR ////////
-$navbar-bg: rgb(255, 255, 255);
+$navbar-bg: #000;
 $navbar-height: 70px;
 $navbar-menu-color: #8e94a9;
 $navbar-font-size: 0.875rem;
