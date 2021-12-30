@@ -50,9 +50,15 @@ app.use(function(req,res,next){
 });
 
 
+app.use(function(req, res, next){
+	if(req.user){
+		next();
+	}else{
+		res.redirect('/login');
+	}
+})
+
 app.use('/', indexRouter);
-
-
 app.use('/user', usersRouter);
 app.use('/account', accountsRouter);
 app.use('/shop', shopsRouter);

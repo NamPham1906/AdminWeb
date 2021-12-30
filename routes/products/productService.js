@@ -6,7 +6,7 @@ const {models} = require('../../models/index');
 const { Op } = require("sequelize");
 
 exports.listFillter=(page = 0, itemPerPage = 10, product_name = null,product_type = null,sold = null,quantity = null,cost = null,importer = null,importdate = null) =>{
-    return models.PRODUCTS.findAll({
+    return models.products.findAll({
         where: {
             [Op.and]:[
             {PRODUCT_NAME: product_name},
@@ -27,7 +27,7 @@ exports.listFillter=(page = 0, itemPerPage = 10, product_name = null,product_typ
 };
 
 exports.list=(page = 0, itemPerPage = 10 ) =>{
-    return models.PRODUCTS.findAll({
+    return models.products.findAll({
         where: {
             ISDELETED: false
           },
@@ -38,7 +38,7 @@ exports.list=(page = 0, itemPerPage = 10 ) =>{
 };
 
 exports.productDetail=(product_id ="0") =>{
-    return models.PRODUCTS.findOne({
+    return models.products.findOne({
         where: {
             PRODUCT_ID: product_id
           },
@@ -47,7 +47,7 @@ exports.productDetail=(product_id ="0") =>{
 }
 
 exports.deleteProduct=(product_id ="0") =>{
-    models.PRODUCTS.update({ 
+    models.products.update({ 
         ISDELETED: true
      }, {
         where: {
@@ -57,7 +57,7 @@ exports.deleteProduct=(product_id ="0") =>{
 }
 
 exports.updateProduct=(product_id ="0", product_name,product_type,sold,quantity,description,cost,importer,importdate) =>{
-    models.PRODUCTS.update({ 
+    models.products.update({ 
         PRODUCT_NAME: product_name,
         PRODUCT_TYPE: product_type,
         SOLD: sold,
@@ -75,7 +75,7 @@ exports.updateProduct=(product_id ="0", product_name,product_type,sold,quantity,
 
 exports.addProduct=(newid, product_name,product_type,sold,quantity,description,cost,importer,importdate) =>{
     
-    const newproduct =  models.PRODUCTS.create({ 
+    const newproduct =  models.products.create({ 
         PRODUCT_ID: newid,
         PRODUCT_NAME: product_name,
         PRODUCT_TYPE: product_type,
@@ -90,5 +90,5 @@ exports.addProduct=(newid, product_name,product_type,sold,quantity,description,c
 }
 
 exports.maxProductID=() => {
-    return models.PRODUCTS.max("PRODUCT_ID");
+    return models.products.max("PRODUCT_ID");
 }

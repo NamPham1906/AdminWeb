@@ -3,7 +3,7 @@ const { options } = require('..');
 const {models} = require('../../models/index');
 
 exports.allList=() =>{
-    return models.ADMINS.findAll({
+    return models.admins.findAll({
         where: {
             ISDELETED: false
           },
@@ -13,7 +13,7 @@ exports.allList=() =>{
 
 
 exports.findAccount=(username ="0") =>{
-    return models.ADMINS.findOne({
+    return models.admins.findOne({
         where: {
             USERNAME: username,
             ISDELETED: false
@@ -23,7 +23,7 @@ exports.findAccount=(username ="0") =>{
 }
 
 exports.list=(page = 0, itemPerPage = 10 ) =>{
-    return models.ADMINS.findAll({
+    return models.admins.findAll({
         where: {
             ISDELETED: false
           },
@@ -34,7 +34,7 @@ exports.list=(page = 0, itemPerPage = 10 ) =>{
 };
 
 exports.accountDetail=(account_id ="0") =>{
-    return models.ADMINS.findOne({
+    return models.admins.findOne({
         where: {
             ADMIN_ID: account_id
           },
@@ -45,7 +45,7 @@ exports.accountDetail=(account_id ="0") =>{
 
 exports.addAccount=(newid,first_name,last_name,gender,dateofbirth,email,user_name,password) =>{
     
-    const newproduct =  models.ADMINS.create({ 
+    const newproduct =  models.admins.create({ 
         ADMIN_ID: newid,
         FIRSTNAME: first_name,
         LASTNAME: last_name,
@@ -59,5 +59,5 @@ exports.addAccount=(newid,first_name,last_name,gender,dateofbirth,email,user_nam
 }
 
 exports.maxAccountID=() => {
-    return models.ADMINS.max("ADMIN_ID");
+    return models.admins.max("ADMIN_ID");
 }

@@ -7,7 +7,7 @@ const { Op } = require("sequelize");
 
 
 exports.findAccount=(username ="0") =>{
-    return models.ADMINS.findOne({
+    return models.admins.findOne({
         where: {
             USERNAME: username,
             ISDELETED: fase

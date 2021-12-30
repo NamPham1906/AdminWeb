@@ -103,85 +103,85 @@
 
 /*-------------------------------------------------------------------*/
 /* === Import Bootstrap functions and variables === */
-@import '//node_modules/bootstrap/scss/_functions.scss';
-@import '//node_modules/bootstrap/scss/_variables.scss';
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
 
 /*-------------------------------------------------------------------*/
 /* === Import template variables === */
-@import '//assets/scss/variables';
+@import './variables';
 
 /*--------------------c-----.------------------------------n------------*/
 /* === SCSS Compass Functions === */
-@import '//node_modules/compass-mixins/lib/compass';
-@import "//node_modules/compass-mixins/lib/animate";
+@import '../../../node_modules/compass-mixins/lib/compass';
+@import '../../../node_modules/compass-mixins/lib/animate';
 
 /*-------------------------------------------------------------------*/
 /* === Boostrap Main SCSS === */
-@import "//node_modules/bootstrap/scss/bootstrap";
+@import '../../../node_modules/bootstrap/scss/bootstrap';
 
 /*-------------------------------------------------------------------*/
 /* === Template mixins === */
-@import "//assets/scss/components/mixins/misc";
-@import "//assets/scss/components/mixins/animation";
-@import "//assets/scss/components/mixins/background";
-@import "//assets/scss/components/mixins/badges";
-@import "//assets/scss/components/mixins/blockqoute";
-@import "//assets/scss/components/mixins/buttons";
-@import "//assets/scss/components/mixins/breadcrumbs";
-@import "//assets/scss/components/mixins/cards";
-@import "//assets/scss/components/mixins/no-ui-slider";
-@import "//assets/scss/components/mixins/pagination";
-@import "//assets/scss/components/mixins/popovers";
-@import "//assets/scss/components/mixins/tooltips";
+@import './components/mixins/misc';
+@import './components/mixins/animation';
+@import './components/mixins/background';
+@import './components/mixins/badges';
+@import './components/mixins/blockqoute';
+@import './components/mixins/buttons';
+@import './components/mixins/breadcrumbs';
+@import './components/mixins/cards';
+@import './components/mixins/no-ui-slider';
+@import './components/mixins/pagination';
+@import './components/mixins/popovers';
+@import './components/mixins/tooltips';
 
 /*-------------------------------------------------------------------*/
 /* === Core Styles === */
-@import "//assets/scss/components/reset";
-@import "//assets/scss/components/fonts";
-@import "//assets/scss/components/functions";
-@import "//assets/scss/components/background";
-@import "//assets/scss/components/typography";
-@import "//assets/scss/components/misc";
-@import "//assets/scss/components/footer";
-@import "//assets/scss/components/utilities";
-@import "//assets/scss/components/demo";
-@import "//assets/scss/components/dashboard";
+@import './components/reset';
+@import './components/fonts';
+@import './components/functions';
+@import './components/background';
+@import './components/typography';
+@import './components/misc';
+@import './components/footer';
+@import './components/utilities';
+@import './components/demo';
+@import './components/dashboard';
 
 /*--------------------------------------------------------------------*/
 /* === Components === */
-@import "//assets/scss/components/badges";
-@import "//assets/scss/components/buttons";
-@import "//assets/scss/components/cards";
-@import "//assets/scss/components/checkbox-radio";
-@import "//assets/scss/components/dropdown";
-@import "//assets/scss/components/forms";
-@import "//assets/scss/components/icons";
-@import "//assets/scss/components/loaders/loaders";
-@import "//assets/scss/components/preview";
-@import "//assets/scss/components/tables";
-@import "//assets/scss/components/tabs";
-@import "//assets/scss/components/todo-list";
+@import './components/badges';
+@import './components/buttons';
+@import './components/cards';
+@import './components/checkbox-radio';
+@import './components/dropdown';
+@import './components/forms';
+@import './components/icons';
+@import './components/loaders/loaders';
+@import './components/preview';
+@import './components/tables';
+@import './components/tabs';
+@import './components/todo-list';
 
 /*-------------------------------------------------------------------*/
 
 /*-------------------------------------------------------------------*/
 /* === Plugin overrides === */
-@import "//assets/scss/components/plugin-overrides/ace";
-@import "//assets/scss/components/plugin-overrides/avgrund";
-@import "//assets/scss/components/plugin-overrides/codemirror";
-@import "//assets/scss/components/plugin-overrides/datepicker";
-@import "//assets/scss/components/plugin-overrides/flot-chart";
-@import "//assets/scss/components/plugin-overrides/full-calendar";
-@import "//assets/scss/components/plugin-overrides/jquery-file-upload";
-@import "//assets/scss/components/plugin-overrides/pws-tabs";
-@import "//assets/scss/components/plugin-overrides/select2";
-@import "//assets/scss/components/plugin-overrides/typeahead";
-@import "//assets/scss/components/plugin-overrides/lists";
+@import './components/plugin-overrides/ace';
+@import './components/plugin-overrides/avgrund';
+@import './components/plugin-overrides/codemirror';
+@import './components/plugin-overrides/datepicker';
+@import './components/plugin-overrides/flot-chart';
+@import './components/plugin-overrides/full-calendar';
+@import './components/plugin-overrides/jquery-file-upload';
+@import './components/plugin-overrides/pws-tabs';
+@import './components/plugin-overrides/select2';
+@import './components/plugin-overrides/typeahead';
+@import './components/plugin-overrides/lists';
 
 /*-------------------------------------------------------------------*/
 
-@import "//assets/scss/settings-panel";
-@import "//assets/scss/navbar";
-@import "//assets/scss/sidebar";
-@import "//assets/scss/layouts";
-@import "//assets/scss/vertical/vertical-wrapper";
+@import './settings-panel';
+@import './navbar';
+@import './sidebar';
+@import './layouts';
+@import './vertical/vertical-wrapper';
