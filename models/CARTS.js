@@ -1,12 +1,12 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('CARTS', {
+  return sequelize.define('carts', {
     CLIENT_ID: {
       type: DataTypes.CHAR(5),
       allowNull: false,
       primaryKey: true,
       references: {
-        model: 'CLIENTS',
+        model: 'clients',
         key: 'CLIENT_ID'
       }
     },
@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true,
       references: {
-        model: 'PRODUCTS',
+        model: 'products',
         key: 'PRODUCT_ID'
       }
     },
@@ -29,7 +29,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'CARTS',
+    tableName: 'carts',
     timestamps: false,
     indexes: [
       {
