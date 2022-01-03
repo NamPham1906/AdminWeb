@@ -19625,8 +19625,7 @@ dl {
     .sidebar-mini .page-body-wrapper .navbar.navbar-mini.fixed-top {
       left: 185px; }
   .sidebar-mini .sidebar {
-    width: 185px;
-    background-color: red; }
+    width: 185px; }
     .sidebar-mini .sidebar .nav .sidebar-category {
       text-align: center; }
     .sidebar-mini .sidebar .nav .nav-item {
