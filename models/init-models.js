@@ -2,6 +2,7 @@ var DataTypes = require("sequelize").DataTypes;
 var _admins = require("./admins");
 var _bills = require("./bills");
 var _carts = require("./carts");
+var _categories = require("./categories");
 var _clients = require("./clients");
 var _deliveries = require("./deliveries");
 var _orders = require("./orders");
@@ -14,6 +15,7 @@ function initModels(sequelize) {
   var admins = _admins(sequelize, DataTypes);
   var bills = _bills(sequelize, DataTypes);
   var carts = _carts(sequelize, DataTypes);
+  var categories = _categories(sequelize, DataTypes);
   var clients = _clients(sequelize, DataTypes);
   var deliveries = _deliveries(sequelize, DataTypes);
   var orders = _orders(sequelize, DataTypes);
@@ -38,6 +40,8 @@ function initModels(sequelize) {
   admins.hasMany(orders, { as: "orders", foreignKey: "MANAGER"});
   products.belongsTo(admins, { as: "IMPORTER_admin", foreignKey: "IMPORTER"});
   admins.hasMany(products, { as: "products", foreignKey: "IMPORTER"});
+  products.belongsTo(categories, { as: "CATEGORY_category", foreignKey: "CATEGORY"});
+  categories.hasMany(products, { as: "products", foreignKey: "CATEGORY"});
   carts.belongsTo(clients, { as: "CLIENT", foreignKey: "CLIENT_ID"});
   clients.hasMany(carts, { as: "carts", foreignKey: "CLIENT_ID"});
   deliveries.belongsTo(clients, { as: "CLIENT", foreignKey: "CLIENT_ID"});
@@ -69,6 +73,7 @@ function initModels(sequelize) {
     admins,
     bills,
     carts,
+    categories,
     clients,
     deliveries,
     orders,

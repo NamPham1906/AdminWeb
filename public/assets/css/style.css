@@ -15526,7 +15526,8 @@ html {
   overflow: auto; }
 
 .container-scroller {
-  overflow: hidden; }
+  overflow: hidden;
+  min-height: 100%; }
 
 pre {
   background: #e8eff4;
@@ -15572,7 +15573,10 @@ code {
   -ms-transition: all 0.25s ease;
   font-size: calc(0.875rem - 0.05rem);
   font-family: "Rubik", sans-serif;
-  font-weight: 400; }
+  font-weight: 400;
+  position: absolute;
+  width: 100%;
+  bottom: 0; }
   .footer a {
     color: #b0b435;
     font-size: inherit; }
@@ -19948,6 +19952,7 @@ dl {
   height: 100%;
   min-height: calc(100vh - 70px);
   padding-top: 35px;
+  position: relative;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
@@ -19962,8 +19967,5 @@ dl {
   padding: 2.75rem 2.25rem;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   -webkit-flex-grow: 1;
   flex-grow: 1; }
