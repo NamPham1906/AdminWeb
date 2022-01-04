@@ -1,5 +1,17 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const multer  = require('multer');
+const path = require('path');
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './public/assets/images/products/')
+    },
+    filename: function (req, file, cb) {
+      cb(null, Date.now() + path.extname(file.originalname)) 
+    }
+  })
+const upload = multer({ storage: storage });
 
 const productsController = require('./productsController');
 
@@ -13,7 +25,7 @@ router.post('/setting/detail/delete', productsController.deleteProduct);
 
 router.post('/setting/detail/update', productsController.updateProduct);
 
-router.post('/setting/detail/add', productsController.addProduct);
+router.post('/setting/detail/add', upload.single('uploaded_file'), productsController.addProduct);
 
 router.post('/setting/filter',productsController.fillterProduct);
 

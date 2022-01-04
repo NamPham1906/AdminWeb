@@ -15023,12 +15023,19 @@ a:hover {
   color: white;
   text-decoration: none; }
 
+.mt-4 .pl-0 a:hover {
+  color: #b0b435;
+  text-decoration: none; }
+
 .page-item .page-link {
   color: black; }
 
 .page-item .page-link:hover {
   color: white;
   background: #b0b435; }
+
+.review-image {
+  width: 100%; }
 
 .form-control, .select2-container--default .select2-selection--single, .select2-container--default .select2-selection--single .select2-search__field, .typeahead,
 .tt-query,

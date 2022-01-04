@@ -94,27 +94,38 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic1">
             <i class="mdi mdi-contacts menu-icon"></i>
             <span class="menu-title">User Accounts</span>
             <i class="menu-arrow"></i>
           </a>
-          <div class="collapse" id="ui-basic">
+          <div class="collapse" id="ui-basic1">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
                 <a class="nav-link" href="/account/setting/add">Create New Account</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/account/setting">Accounts Setting</a>
+                <a class="nav-link" href="/account/setting">Accounts List</a>
               </li>
             </ul>
           </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/product/setting">
+         <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic2">
             <i class="mdi mdi-format-list-bulleted menu-icon"></i>
             <span class="menu-title">Products</span>
+            <i class="menu-arrow"></i>
           </a>
+          <div class="collapse" id="ui-basic2">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item">
+                <a class="nav-link" href="/product/setting/add">Create New Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/product/setting">Products List</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/order/setting">
@@ -131,9 +142,6 @@
         <li class="nav-item sidebar-actions">
           <div class="nav-link">
             <div class="mt-4">
-              <div class="border-none">
-                <p class="text-black">Notification</p>
-              </div>
               <ul class="mt-4 pl-0">
                 <li> <a href="/logout">Sign Out</a></li>
               </ul>
@@ -235,7 +243,7 @@
                 <img class="nav-profile-img mr-2" alt="" src="{{user.useravatar}}" />
                 <span class="profile-name">{{user.name}}</span>
               </a>
-              <div class="dropdown-menu navbar-dropdown w-100" aria-labelledby="profileDropdown">
+              <div class="dropdown-menu navbar-dropdown w-120" aria-labelledby="profileDropdown">
                 <a class="dropdown-item" href="/account/detail?account_id={{user.account_id}}"">
                   <i class="mdi mdi-cached mr-2 text-success"></i> Your Account </a>
                 <a class="dropdown-item" href="/logout">
@@ -290,6 +298,8 @@
   <!-- endinject -->
   <!-- Custom js for this page -->
   <script src="/assets/js/dashboard.js"></script>
+  <script src="/assets/js/uploadFile.js"></script>
+   <script src="/assets/js/file-upload.js"></script>
   <!-- End custom js for this page -->
 </body>
 

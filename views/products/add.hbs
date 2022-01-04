@@ -13,14 +13,14 @@
       <div class="col-12 grid-margin">
         <div class="card">
           <div class="card-body">
-            <form class="form-sample" action="/product/setting/detail/add" method="POST">
+            <form class="form-sample" action="/product/setting/detail/add" method="POST"  enctype="multipart/form-data">
               <p class="card-description">Product information</p>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Image</label>
                     <div class="col-sm-9">
-                      <img src="/assets/images/uploadImage.png" alt="image">
+                      <img src="/assets/images/uploadImage.png" class="review-image" id="file-image" alt="image">
                     </div>
                   </div>
                 </div>
@@ -28,9 +28,10 @@
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Upload Image</label>
                     <div class="input-group col-sm-9">
-                      <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
+                      <input id="file-chosen" type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
                       <span class="input-group-append">
-                        <button class="file-upload-browse btn btn-primary" type="button"> Upload </button>
+                          <label class="file-upload-browse btn btn-primary" for="actual-btn">Choose File</label>
+                          <input type="file" class="form-control-file" id="actual-btn" name="uploaded_file" hidden/>
                       </span>
                     </div>
                   </div>

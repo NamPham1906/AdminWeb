@@ -10,7 +10,8 @@ exports.findAccount=(username ="0") =>{
     return models.admins.findOne({
         where: {
             USERNAME: username,
-            ISDELETED: fase
+            ISDELETED: false,
+            ISLOCK: false
           },
         raw:true
     });

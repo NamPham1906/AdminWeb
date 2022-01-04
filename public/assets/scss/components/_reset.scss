@@ -18,6 +18,15 @@ a:hover{
     text-decoration: none;
 }
 
+.mt-4 {
+    .pl-0{
+        a:hover{
+            color:#b0b435;
+            text-decoration: none;
+        }
+    }
+    
+}
 .page-item{
     
     .page-link{
@@ -30,6 +39,9 @@ a:hover{
     }
 }
 
+.review-image{
+    width:100%;
+}
 
 
 .form-control,
