@@ -5,12 +5,12 @@ const {models} = require('../../models/index');
 
 const { Op } = require("sequelize");
 
-exports.listFillter=(page = 0, itemPerPage = 10, product_name = null,product_type = null,sold = null,quantity = null,cost = null,importer = null,importdate = null) =>{
+exports.listFillter=(page = 0, itemPerPage = 10, product_name = null,category = null,sold = null,quantity = null,cost = null,importer = null,importdate = null) =>{
     return models.products.findAll({
         where: {
             [Op.and]:[
             {PRODUCT_NAME: product_name},
-            {PRODUCT_TYPE: product_type},
+            {CATEGORY: category},
             {SOLD: sold},
             {QUANTITY: quantity},
             {PRICE: cost}
@@ -22,18 +22,21 @@ exports.listFillter=(page = 0, itemPerPage = 10, product_name = null,product_typ
           },
         offset:page*itemPerPage,
         limit: itemPerPage,
-        raw:true
+        raw:true,
+        nest : true
     });
 };
 
 exports.list=(page = 0, itemPerPage = 10 ) =>{
     return models.products.findAll({
+        include: [ {model: models.categories, as: "CATEGORY_category"}, {model: models.admins ,  attributes: ['LASTNAME'],as: "IMPORTER_admin"}  ],
         where: {
             ISDELETED: false
           },
         offset:page*itemPerPage,
         limit: itemPerPage,
-        raw:true
+        raw:true,
+        nest : true
     });
 };
 
@@ -56,10 +59,10 @@ exports.deleteProduct=(product_id ="0") =>{
       });
 }
 
-exports.updateProduct=(product_id ="0", product_name,product_type,sold,quantity,description,cost,importer,importdate) =>{
+exports.updateProduct=(product_id ="0", product_name,category,sold,quantity,description,cost,importer,importdate) =>{
     models.products.update({ 
         PRODUCT_NAME: product_name,
-        PRODUCT_TYPE: product_type,
+        CATEGORY: category,
         SOLD: sold,
         QUANTITY: quantity,
         DETAIL: description,
@@ -73,11 +76,12 @@ exports.updateProduct=(product_id ="0", product_name,product_type,sold,quantity,
       });
 }
 
-exports.addProduct=(product_name,product_type,sold,quantity,description,cost,importer,importdate) =>{
+exports.addProduct=(product_name,filename,category,sold,quantity,description,cost,importer,importdate) =>{
     
     const newproduct =  models.products.create({ 
         PRODUCT_NAME: product_name,
-        PRODUCT_TYPE: product_type,
+        IMAGE: "/assets/images/products/" + filename,
+        CATEGORY: category,
         SOLD: sold,
         QUANTITY: quantity,
         DETAIL: description,
@@ -86,8 +90,4 @@ exports.addProduct=(product_name,product_type,sold,quantity,description,cost,imp
         IMPORTDATE: importdate,
         ISDELETED: false
       });
-}
-
-exports.maxProductID=() => {
-    return models.products.max("PRODUCT_ID");
 }

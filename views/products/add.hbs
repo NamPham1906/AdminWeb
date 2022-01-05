@@ -45,7 +45,13 @@
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Product Type</label>
                     <div class="col-sm-9">
-                      <input type="text" name="product_type" placeholder="Product Type" class="form-control" value="">
+                      <select id="product_type" name="category" class="form-control" value="">
+                        {{#each categories}}
+                        <option value={{CATEGORY_ID}}>
+                          <label>{{CATEGORY_NAME}}</label>
+                        </option>
+                        {{/each}}
+                      </select>
                     </div>
                   </div>
                   

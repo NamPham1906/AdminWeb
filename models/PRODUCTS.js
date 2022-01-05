@@ -15,10 +15,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(100),
       allowNull: true
     },
-    PRODUCT_TYPE: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
     CATEGORY: {
       type: DataTypes.CHAR(100),
       allowNull: true,
