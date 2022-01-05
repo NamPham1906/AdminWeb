@@ -2,8 +2,9 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('products', {
     PRODUCT_ID: {
-      type: DataTypes.CHAR(250),
+      type: DataTypes.CHAR(100),
       allowNull: false,
+      defaultValue: Sequelize.Sequelize.fn('uuid'),
       primaryKey: true
     },
     IMAGE: {
@@ -19,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     CATEGORY: {
-      type: DataTypes.STRING(250),
+      type: DataTypes.CHAR(100),
       allowNull: true,
       references: {
         model: 'categories',
@@ -47,7 +48,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     IMPORTER: {
-      type: DataTypes.CHAR(250),
+      type: DataTypes.CHAR(100),
       allowNull: true,
       references: {
         model: 'admins',

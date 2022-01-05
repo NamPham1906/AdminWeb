@@ -43,10 +43,9 @@ exports.accountDetail=(account_id ="0") =>{
 }
 
 
-exports.addAccount=(newid,first_name,last_name,gender,dateofbirth,email,user_name,password) =>{
+exports.addAccount=(first_name,last_name,gender,dateofbirth,email,user_name,password) =>{
     
     const newproduct =  models.admins.create({ 
-        ADMIN_ID: newid,
         FIRSTNAME: first_name,
         LASTNAME: last_name,
         GENDER: gender,
@@ -54,10 +53,7 @@ exports.addAccount=(newid,first_name,last_name,gender,dateofbirth,email,user_nam
         EMAIL: email,
         USERNAME: user_name,
         PASS: password,
-        ISDELETED: false
+        ISDELETED: false,
+        ISLOCK: false
       });
-}
-
-exports.maxAccountID=() => {
-    return models.admins.max("ADMIN_ID");
 }

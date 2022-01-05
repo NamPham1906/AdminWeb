@@ -2,8 +2,9 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('admins', {
     ADMIN_ID: {
-      type: DataTypes.CHAR(250),
+      type: DataTypes.CHAR(100),
       allowNull: false,
+      defaultValue: Sequelize.Sequelize.fn('uuid'),
       primaryKey: true
     },
     FIRSTNAME: {

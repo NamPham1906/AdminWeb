@@ -73,10 +73,9 @@ exports.updateProduct=(product_id ="0", product_name,product_type,sold,quantity,
       });
 }
 
-exports.addProduct=(newid, product_name,product_type,sold,quantity,description,cost,importer,importdate) =>{
+exports.addProduct=(product_name,product_type,sold,quantity,description,cost,importer,importdate) =>{
     
     const newproduct =  models.products.create({ 
-        PRODUCT_ID: newid,
         PRODUCT_NAME: product_name,
         PRODUCT_TYPE: product_type,
         SOLD: sold,

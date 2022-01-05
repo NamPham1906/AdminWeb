@@ -38,12 +38,7 @@ exports.updateProduct = async (req,res)=> {
 
 
 exports.addProduct = async (req,res)=> {
-    const id = await productService.maxProductID();
-    var newid =  id.toString().substring(1, 5);
-    var numid = Number(newid.toString());
-    numid = numid + 1;
-    newid = "P00" + numid.toString();
-    await productService.addProduct(   newid,
+    await productService.addProduct(
                                        req.body.product_name,
                                        req.body.product_type,
                                        req.body.sold,

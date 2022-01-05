@@ -16,12 +16,7 @@ exports.accountAdd = async (req,res)=> {
 
 
 exports.addAccount = async (req,res)=> {
-    const id = await accountService.maxAccountID();
-    var newid =  id.toString().substring(1, 5);
-    var numid = Number(newid.toString());
-    numid = numid + 1;
-    newid = "A00" + numid.toString();
-    await accountService.addAccount(   newid,
+    await accountService.addAccount(
                                        req.body.first_name,
                                        req.body.last_name,
                                        req.body.gender,

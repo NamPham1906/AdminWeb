@@ -2,12 +2,13 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('deliveries', {
     DELIVERY_ID: {
-      type: DataTypes.CHAR(250),
+      type: DataTypes.CHAR(100),
       allowNull: false,
+      defaultValue: Sequelize.Sequelize.fn('uuid'),
       primaryKey: true
     },
     ORDER_ID: {
-      type: DataTypes.CHAR(250),
+      type: DataTypes.CHAR(100),
       allowNull: true,
       references: {
         model: 'orders',
@@ -15,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     CLIENT_ID: {
-      type: DataTypes.CHAR(250),
+      type: DataTypes.CHAR(100),
       allowNull: true,
       references: {
         model: 'clients',
@@ -31,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     MANAGER: {
-      type: DataTypes.CHAR(5),
+      type: DataTypes.CHAR(100),
       allowNull: true,
       references: {
         model: 'admins',
