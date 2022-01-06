@@ -2,7 +2,7 @@ const { raw } = require('express');
 const { NULL } = require('node-sass');
 const { options } = require('..');
 const {models} = require('../../models/index');
-
+const { v1: uuidv1 } = require('uuid');
 const { Op } = require("sequelize");
 
 exports.listFillter=(page = 0, itemPerPage = 10, product_name = null,category = null,sold = null,quantity = null,cost = null,importer = null,importdate = null) =>{
@@ -77,9 +77,27 @@ exports.updateProduct=(product_id ="0", product_name,filename,category,sold,quan
       });
 }
 
+exports.updateProductWithoutImage=(product_id ="0", product_name,category,sold,quantity,description,cost,importer,importdate) =>{
+    models.products.update({ 
+        PRODUCT_NAME: product_name,
+        CATEGORY: category,
+        SOLD: sold,
+        QUANTITY: quantity,
+        DETAIL: description,
+        PRICE: cost,
+        IMPORTER: importer,
+        IMPORTDATE: importdate
+     }, {
+        where: {
+            PRODUCT_ID: product_id
+        }
+      });
+}
+
 exports.addProduct=(product_name,filename,category,sold,quantity,description,cost,importer,importdate) =>{
     
     const newproduct =  models.products.create({ 
+        PRODUCT_ID: uuidv1(),
         PRODUCT_NAME: product_name,
         IMAGE: "/assets/images/products/" + filename,
         CATEGORY: category,

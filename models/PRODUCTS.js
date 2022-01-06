@@ -4,7 +4,6 @@ module.exports = function(sequelize, DataTypes) {
     PRODUCT_ID: {
       type: DataTypes.CHAR(100),
       allowNull: false,
-      defaultValue: Sequelize.Sequelize.fn('uuid'),
       primaryKey: true
     },
     IMAGE: {
