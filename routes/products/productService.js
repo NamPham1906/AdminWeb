@@ -59,9 +59,10 @@ exports.deleteProduct=(product_id ="0") =>{
       });
 }
 
-exports.updateProduct=(product_id ="0", product_name,category,sold,quantity,description,cost,importer,importdate) =>{
+exports.updateProduct=(product_id ="0", product_name,filename,category,sold,quantity,description,cost,importer,importdate) =>{
     models.products.update({ 
         PRODUCT_NAME: product_name,
+        IMAGE: "/assets/images/products/" + filename,
         CATEGORY: category,
         SOLD: sold,
         QUANTITY: quantity,

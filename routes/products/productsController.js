@@ -29,6 +29,7 @@ exports.deleteProduct = async (req,res)=> {
 exports.updateProduct = async (req,res)=> {
     await productService.updateProduct(req.body.product_id,
                                        req.body.product_name,
+                                       req.file.filename,
                                        req.body.category,
                                        req.body.sold,
                                        req.body.quantity,
