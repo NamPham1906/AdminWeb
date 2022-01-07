@@ -16,6 +16,34 @@
                   <div class="card-body">
                     <p class="card-description"> Page 1 </p>
                     </p>
+                    <form class="form-sample" action="/product/setting/filter" method="POST">
+                      <div class="row">
+                        <label class="col-sm-3 col-form-label">Product Name</label>
+                        <div class="col-sm-9">
+                          <input type="text" name="product_name" placeholder="Product Name" class="form-control" value="">
+                        </div>
+                        <label class="col-sm-3 col-form-label">Product Type</label>
+                        <div class="col-sm-9">
+                          <input type="text" name="product_type" placeholder="Product Type" class="form-control" value="">
+                        </div>
+                        <label class="col-sm-3 col-form-label">Sold</label>
+                        <div class="col-sm-9">
+                          <input type="number" name="sold" placeholder="Sold" class="form-control" value="">
+                        </div>
+                        <label class="col-sm-3 col-form-label">Quantity</label>
+                        <div class="col-sm-9">
+                          <input type="number" name="quantity" placeholder="Quantity" class="form-control" value="">
+                        </div>
+                        <label class="col-sm-3 col-form-label">Cost</label>
+                        <div class="col-sm-9">
+                          <input type="text" name="cost" placeholder="Cost" class="form-control" value="">
+                        </div>
+                        <div class="col-12">
+                          <button type="submit" class="btn btn-primary float-right m-3" name="product_id" value=""> Search
+                          </button>
+                        </div>
+                      </div>
+                   </form>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
@@ -23,19 +51,23 @@
                             <th>Order ID</th>
                             <th>Customer Name</th>
                             <th>Address</th>
-                            <th>Total bill</th>
+                            <th>Order date</th>
                             <th>Status</th>
                             <th>Detail</th>
                           </tr>
                         </thead>
                         <tbody>
+                           {{#each orders}}
                           <tr>
-                            <td>9321600</td>
-                            <td>Harry Kent</td>
-                            <td>Nguyen Anh Thu st, 12 District, HCMC</td>
-                            <td>300$</td>
+                            <td>{{ORDER_ID}}</td>
+                            <td>{{CLIENT_ID}}</td>
+                            <td>{{ADDRESS}}/td>
+                            <td>{{ORDER_DATE}}</td>
                             <td>
                               <label class="badge badge-danger">Pending</label>
+                               <label class="badge badge-info">Delivering</label>
+                               <label class="badge badge-warning">Packaging</label>
+                               <label class="badge badge-success">Completed</label>
                             </td>
                             <th>
                               <button type="submit" class="btn btn-primary mr-2"> 
@@ -43,62 +75,7 @@
                                </button>
                             </th>
                           </tr>
-                          <tr>
-                            <td>9321600</td>
-                            <td>Harry Kent</td>
-                            <td>Nguyen Anh Thu st, 12 District, HCMC</td>
-                            <td>300$</td>
-                            <td>
-                              <label class="badge badge-warning">Packaging</label>
-                            </td>
-                            <th>
-                              <button type="submit" class="btn btn-primary mr-2"> 
-                                  <a href ="/order/setting/detail/1"> Detail </a>
-                               </button>
-                            </th>
-                          </tr>
-                          <tr>
-                            <td>9321600</td>
-                            <td>Harry Kent</td>
-                            <td>Nguyen Anh Thu st, 12 District, HCMC</td>
-                            <td>300$</td>
-                            <td>
-                              <label class="badge badge-info">Delivering</label>
-                            </td>
-                            <th>
-                              <button type="submit" class="btn btn-primary mr-2"> 
-                                  <a href ="/order/setting/detail/1"> Detail </a>
-                               </button>
-                            </th>
-                          </tr>
-                          <tr>
-                            <td>9321600</td>
-                            <td>Harry Kent</td>
-                            <td>Nguyen Anh Thu st, 12 District, HCMC</td>
-                            <td>300$</td>
-                            <td>
-                              <label class="badge badge-success">Completed</label>
-                            </td>
-                            <th>
-                              <button type="submit" class="btn btn-primary mr-2"> 
-                                  <a href ="/order/setting/detail/1"> Detail </a>
-                               </button>
-                            </th>
-                          </tr>
-                          <tr>
-                            <td>9321600</td>
-                            <td>Harry Kent</td>
-                            <td>Nguyen Anh Thu st, 12 District, HCMC</td>
-                            <td>300$</td>
-                            <td>
-                              <label class="badge badge-warning">Packaging</label>
-                            </td>
-                            <th>
-                              <button type="submit" class="btn btn-primary mr-2"> 
-                                  <a href ="/order/setting/detail/1"> Detail </a>
-                               </button>
-                            </th>
-                          </tr>
+                          {{/each}}
                         </tbody>
                       </table>
                     </div>

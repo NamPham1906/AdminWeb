@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const ordersController = require('./ordersController');
 
-router.get('/setting', function(req, res, next) {
-  res.render('orders/setting', { title: 'Express' });
-});
+
+router.get('/setting',ordersController.list);
 
 router.get('/setting/detail/1', function(req, res, next) {
   res.render('orders/details/1', { title: 'Express' });
