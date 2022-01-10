@@ -65,14 +65,14 @@
                             <td>{{ORDER_DATE}}</td>
                             <td>
                               <label class="badge badge-danger">Pending</label>
-                               <label class="badge badge-info">Delivering</label>
+                               {{!-- <label class="badge badge-info">Delivering</label>
                                <label class="badge badge-warning">Packaging</label>
-                               <label class="badge badge-success">Completed</label>
+                               <label class="badge badge-success">Completed</label> --}}
                             </td>
                             <th>
-                              <button type="submit" class="btn btn-primary mr-2"> 
-                                  <a href ="/order/setting/detail/1"> Detail </a>
-                               </button>
+                              <button type="submit" class="btn btn-primary mr-2 p-0">
+                                <a class="text-decoration-none p-4" href="/order/setting/detail?order_id={{ORDER_ID}}"> Detail </a>
+                            </button>
                             </th>
                           </tr>
                           {{/each}}

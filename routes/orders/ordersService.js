@@ -18,3 +18,14 @@ exports.list=(page = 0, itemPerPage = 10 ) =>{
         nest : true
     });
 };
+
+exports.orderDetail=(order_id ="0") =>{
+    return models.orders.findOne({
+        include: [ {model: models.orders_return ,as: "orders_returns"}  ],
+        where: {
+        ORDER_ID: order_id
+          },
+        raw:true
+    });
+}
+
