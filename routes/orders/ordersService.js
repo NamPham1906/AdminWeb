@@ -5,10 +5,11 @@ const {models} = require('../../models/index');
 const { v1: uuidv1 } = require('uuid');
 const { Op } = require("sequelize");
 
+//, {model: models.orders_return ,as: "orders_returns"}
 
 exports.list=(page = 0, itemPerPage = 10 ) =>{
     return models.orders.findAll({
-        include: [ {model: models.orders_return ,as: "orders_returns"}  ],
+        include: [{model: models.clients ,  attributes: ['LASTNAME'],as: "clients" }],
         where: {
             ISDELETED: false
           },
