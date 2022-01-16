@@ -24,10 +24,21 @@ exports.orderDetail=(order_id ="0") =>{
     return models.orders.findOne({
         include: [ {model: models.clients , as: "CLIENT",attributes: ['LASTNAME']}, {model: models.admins , as: "MANAGER_ADMIN",attributes: ['LASTNAME']}, {model: models.deliveries , as: "DELIVE_RIES",attributes: ['DELIVERY_STATUS']}   ],
         where: {
-        ORDER_ID: order_id
+        ORDER_ID: order_id,
+        ISDELETED: false
           },
         raw:true,
         nest : true
     });
 }
 
+
+exports.deleteOrder=(order_id ="0") =>{
+    models.orders.update({ 
+        ISDELETED: true
+     }, {
+        where: {
+            ORDER_ID: order_id
+        }
+      });
+}

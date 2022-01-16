@@ -12,15 +12,15 @@ const moment = require('moment');
 const handlebars = require('./public/assets/js/handlebars-helper')(handlebar);
 
 
-const indexRouter = require('./routes/index');
-const loginRouter = require('./routes/auth/index');
-const usersRouter = require('./routes/user/index');
-const accountsRouter = require('./routes/accounts/index');
-const shopsRouter = require('./routes/shops/index');
-const productsRouter = require('./routes/products/index');
-const ordersRouter = require('./routes/orders/index');
-const chartsRouter = require('./routes/charts/index');
-const passport = require('./routes/auth/passport');
+const indexRouter = require('./components/index');
+const loginRouter = require('./components/auth/index');
+const usersRouter = require('./components/user/index');
+const accountsRouter = require('./components/accounts/index');
+const shopsRouter = require('./components/shops/index');
+const productsRouter = require('./components/products/index');
+const ordersRouter = require('./components/orders/index');
+const chartsRouter = require('./components/charts/index');
+const passport = require('./components/auth/passport');
 const flash = require('connect-flash');
 
 const app = express();

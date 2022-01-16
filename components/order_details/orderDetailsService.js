@@ -15,3 +15,13 @@ exports.listFillter=(order_id ="0") =>{
         nest : true
     });
 };
+
+exports.deleteOrderDetail=(order_id ="0") =>{
+    models.orders_detail.update({ 
+        ISDELETED: true
+     }, {
+        where: {
+            ORDER_ID: order_id
+        }
+      });
+}
