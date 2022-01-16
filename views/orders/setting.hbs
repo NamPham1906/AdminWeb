@@ -60,14 +60,25 @@
                            {{#each orders}}
                           <tr>
                             <td>{{ORDER_ID}}</td>
-                            <td>{{CLIENT_ID}}</td>
-                            <td>{{ADDRESS}}/td>
-                            <td>{{ORDER_DATE}}</td>
+                            <td>{{CLIENT.LASTNAME}}</td>
+                            <td>{{ADDRESS}}</td>
+                            <td>{{format ORDER_DATE}}</td>
                             <td>
-                              <label class="badge badge-danger">Pending</label>
-                               {{!-- <label class="badge badge-info">Delivering</label>
-                               <label class="badge badge-warning">Packaging</label>
-                               <label class="badge badge-success">Completed</label> --}}
+                              {{#ifEquals deliveries.DELIVERY_STATUS "FAILED"}}
+                                <label class="badge badge-danger" style="width: 90px;">failed</label>
+                              {{/ifEquals}}
+                              
+                               {{#ifEquals deliveries.DELIVERY_STATUS "SUCCEED"}}
+                                <label class="badge badge-success" style="width: 90px;">success</label>
+                              {{/ifEquals}}
+
+                               {{#ifEquals deliveries.DELIVERY_STATUS "PACKAGING"}}
+                                <label class="badge badge-warning" style="width: 90px;">Packaging</label>
+                              {{/ifEquals}}
+
+                               {{#ifEquals deliveries.DELIVERY_STATUS "DELIVERING"}}
+                               <label class="badge badge-info" style="width: 90px;">Delivering</label>
+                              {{/ifEquals}}
                             </td>
                             <th>
                               <button type="submit" class="btn btn-primary mr-2 p-0">

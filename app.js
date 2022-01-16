@@ -1,29 +1,50 @@
-var createError = require('http-errors');
-var express = require('express');
+const createError = require('http-errors');
+const express = require('express');
 const bodyParser = require("body-parser");
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var session = require("express-session");
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const session = require("express-session");
+const hbs = require('hbs');
+const exphbs  = require('express-handlebars');
+const handlebar = require('handlebars');
+const moment = require('moment');
+const handlebars = require('./public/assets/js/handlebars-helper')(handlebar);
 
 
-var indexRouter = require('./routes/index');
-var loginRouter = require('./routes/auth/index');
-var usersRouter = require('./routes/user/index');
-var accountsRouter = require('./routes/accounts/index');
-var shopsRouter = require('./routes/shops/index');
-var productsRouter = require('./routes/products/index');
-var ordersRouter = require('./routes/orders/index');
-var chartsRouter = require('./routes/charts/index');
+const indexRouter = require('./routes/index');
+const loginRouter = require('./routes/auth/index');
+const usersRouter = require('./routes/user/index');
+const accountsRouter = require('./routes/accounts/index');
+const shopsRouter = require('./routes/shops/index');
+const productsRouter = require('./routes/products/index');
+const ordersRouter = require('./routes/orders/index');
+const chartsRouter = require('./routes/charts/index');
 const passport = require('./routes/auth/passport');
-var flash = require('connect-flash');
+const flash = require('connect-flash');
 
-var app = express();
-
+const app = express();
 
 
 // view engine  setup
 app.set('views', path.join(__dirname, 'views'));
+
+app.engine('.hbs',exphbs.engine({
+  defaultLayout:'layout',
+  layoutsDir: path.join(__dirname,'views'),
+  partialsDir:path.join(__dirname,'views'),
+  extname:'.hbs',
+  helpers: {
+    format: val => {
+      return moment(val).format('L');
+    },
+    formattime: val => {
+      return moment(val).format('YYYY-MM-DDTHH:mm');
+    },
+  }
+
+}));
+
 app.set('view engine', 'hbs');
 
 

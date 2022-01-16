@@ -1,4 +1,5 @@
 const orderService = require('../orders/ordersService');
+const accountService = require('../accounts/accountService');
 
 exports.list = async (req,res)=> {
     const orders = await orderService.list(!isNaN(req.query.page) && req.query.page > 0? req.query.page - 1:0);
@@ -7,6 +8,6 @@ exports.list = async (req,res)=> {
 
 exports.orderDetail = async (req,res)=> {
     const order = await orderService.orderDetail(req.query.order_id);
-
-    res.render('orders/details',  {order} );
+    const accounts = await accountService.allList();
+    res.render('orders/details',  {order, accounts} );
 }

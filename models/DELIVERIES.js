@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     DELIVERY_STATUS: {
-      type: DataTypes.ENUM('FAILED','SUCCEED'),
+      type: DataTypes.ENUM('FAILED','PACKAGING','DELIVERING','SUCCEED'),
       allowNull: true
     },
     MANAGER: {
