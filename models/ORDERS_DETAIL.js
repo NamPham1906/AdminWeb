@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true,
       references: {
-        model: 'orders',
+        model: 'ORDERS',
         key: 'ORDER_ID'
       }
     },
@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true,
       references: {
-        model: 'products',
+        model: 'PRODUCTS',
         key: 'PRODUCT_ID'
       }
     },
@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    PRICE: {
+    PRODUCTPRICE: {
       type: DataTypes.FLOAT,
       allowNull: true
     },
@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'orders_detail',
+    tableName: 'ORDERS_DETAIL',
     timestamps: false,
     indexes: [
       {

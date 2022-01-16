@@ -4,7 +4,6 @@ module.exports = function(sequelize, DataTypes) {
     CATEGORY_ID: {
       type: DataTypes.CHAR(100),
       allowNull: false,
-      defaultValue: Sequelize.Sequelize.fn('uuid'),
       primaryKey: true
     },
     CATEGORY_NAME: {

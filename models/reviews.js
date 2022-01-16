@@ -1,15 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('wishlists', {
-    CLIENT_ID: {
-      type: DataTypes.CHAR(100),
-      allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'CLIENTS',
-        key: 'CLIENT_ID'
-      }
-    },
+  return sequelize.define('reviews', {
     PRODUCT_ID: {
       type: DataTypes.CHAR(100),
       allowNull: false,
@@ -19,13 +10,30 @@ module.exports = function(sequelize, DataTypes) {
         key: 'PRODUCT_ID'
       }
     },
+    CLIENT_ID: {
+      type: DataTypes.CHAR(100),
+      allowNull: false,
+      primaryKey: true,
+      references: {
+        model: 'CLIENTS',
+        key: 'CLIENT_ID'
+      }
+    },
+    REVIEW: {
+      type: DataTypes.STRING(200),
+      allowNull: true
+    },
+    REVIEWDATE: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
     ISDELETED: {
       type: DataTypes.BOOLEAN,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'WISHLISTS',
+    tableName: 'REVIEWS',
     timestamps: false,
     indexes: [
       {
@@ -38,7 +46,7 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "fk_w_pd",
+        name: "fk_rv_pd",
         using: "BTREE",
         fields: [
           { name: "PRODUCT_ID" },

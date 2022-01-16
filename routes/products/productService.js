@@ -29,7 +29,7 @@ exports.listFillter=(page = 0, itemPerPage = 10, product_name = null,category = 
 
 exports.list=(page = 0, itemPerPage = 10 ) =>{
     return models.products.findAll({
-        include: [ {model: models.categories, as: "CATEGORY_category"}, {model: models.admins ,  attributes: ['LASTNAME'],as: "IMPORTER_admin"}  ],
+        include: [ {model: models.categories, as: "CATEGORY_CATEGORY"}, {model: models.admins ,  attributes: ['LASTNAME'],as: "IMPORTER_ADMIN"}  ],
         where: {
             ISDELETED: false
           },

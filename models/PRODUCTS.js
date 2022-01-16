@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
         key: 'CATEGORY_ID'
       }
     },
-    STONK: {
+    STOCK: {
       type: DataTypes.ENUM('IN STOCK','OUT STOCK'),
       allowNull: true
     },
@@ -46,7 +46,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.CHAR(100),
       allowNull: true,
       references: {
-        model: 'admins',
+        model: 'ADMINS',
         key: 'ADMIN_ID'
       }
     },

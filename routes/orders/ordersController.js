@@ -1,4 +1,5 @@
 const orderService = require('../orders/ordersService');
+const orderDetailService = require('../order_details/orderDetailsService');
 const accountService = require('../accounts/accountService');
 
 exports.list = async (req,res)=> {
@@ -8,6 +9,7 @@ exports.list = async (req,res)=> {
 
 exports.orderDetail = async (req,res)=> {
     const order = await orderService.orderDetail(req.query.order_id);
+    const orderDetails = await orderDetailService.listFillter(req.query.order_id);
     const accounts = await accountService.allList();
-    res.render('orders/details',  {order, accounts} );
+    res.render('orders/details',  {order, orderDetails, accounts} );
 }

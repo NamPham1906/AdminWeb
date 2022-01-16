@@ -9,7 +9,7 @@ const { Op } = require("sequelize");
 
 exports.list=(page = 0, itemPerPage = 10 ) =>{
     return models.orders.findAll({
-        include: [{model: models.clients , as: "CLIENT",attributes: ['LASTNAME']},{model: models.deliveries , as: "deliveries",attributes: ['DELIVERY_STATUS']}],
+        include: [{model: models.clients , as: "CLIENT",attributes: ['LASTNAME']},{model: models.deliveries , as: "DELIVE_RIES",attributes: ['DELIVERY_STATUS']}],
         where: {
             ISDELETED: false
           },
@@ -22,9 +22,7 @@ exports.list=(page = 0, itemPerPage = 10 ) =>{
 
 exports.orderDetail=(order_id ="0") =>{
     return models.orders.findOne({
-        include: [{model: models.orders_detail ,as: "orders_details", 
-        include: [{model: models.products ,as: "PRODUCT"}]
-    }, {model: models.clients , as: "CLIENT",attributes: ['LASTNAME']}, {model: models.admins , as: "MANAGER_admin",attributes: ['LASTNAME']}, {model: models.orders_return ,as: "orders_returns"}   ],
+        include: [ {model: models.clients , as: "CLIENT",attributes: ['LASTNAME']}, {model: models.admins , as: "MANAGER_ADMIN",attributes: ['LASTNAME']}, {model: models.deliveries , as: "DELIVE_RIES",attributes: ['DELIVERY_STATUS']}   ],
         where: {
         ORDER_ID: order_id
           },

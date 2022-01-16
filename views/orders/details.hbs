@@ -13,10 +13,10 @@
       <div class="col-12 grid-margin">
         <div class="card">
           <div class="card-body">
-            <form class="form-sample" id="update-form" action="/product/setting/detail/update" method="POST" enctype="multipart/form-data">
+            <form class="form-sample" id="update-form" action="/order/setting/detail/update" method="POST" enctype="multipart/form-data">
               <p class="card-description">Order information</p>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col">
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Order ID</label>
                     <div class="col-sm-9">
@@ -24,16 +24,40 @@
                     </div>
                   </div>
                   <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Status</label>
+                    <div class="col-sm-9">
+                        {{#ifEquals order.DELIVE_RIES.DELIVERY_STATUS "FAILED"}}
+                                <label class="badge badge-danger" style="width: 90px;">failed</label>
+                        {{/ifEquals}}
+
+                        {{#ifEquals order.DELIVE_RIES.DELIVERY_STATUS "RETURN"}}
+                                <label class="badge badge-secondary" style="width: 90px;">return</label>
+                        {{/ifEquals}}
+                              
+                        {{#ifEquals order.DELIVE_RIES.DELIVERY_STATUS "SUCCEED"}}
+                                <label class="badge badge-success" style="width: 90px;">success</label>
+                        {{/ifEquals}}
+
+                        {{#ifEquals order.DELIVE_RIES.DELIVERY_STATUS "PACKAGING"}}
+                                <label class="badge badge-warning" style="width: 90px;">Packaging</label>
+                        {{/ifEquals}}
+
+                        {{#ifEquals order.DELIVE_RIES.DELIVERY_STATUS "DELIVERING"}}
+                               <label class="badge badge-info" style="width: 90px;">Delivering</label>
+                        {{/ifEquals}}
+                    </div>
+                  </div>
+                  <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Order date</label>
                       <div class="col-sm-9">
-                        <input class="form-control" name="importdate" type="datetime-local" readonly="readonly"  value="{{formattime order.ORDER_DATE}}">
+                        <input class="form-control" name="orderdate" type="datetime-local" readonly="readonly"  value="{{formattime order.ORDER_DATE}}">
                       </div>
                     </div>
                   
                    <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Manager</label>
                     <div class="col-sm-9">
-                      <select id="staff" name="importer" class="form-control" disabled="true">
+                      <select id="staff" name="manager" class="form-control" disabled="true">
                         {{#each accounts}}
                         <option value={{ADMIN_ID}}>
                           <label>{{LASTNAME}}</label>
@@ -61,23 +85,44 @@
                        <input type="text" name="address" readonly="readonly" placeholder="Address" class="form-control" value="{{order.ADDRESS}}">
                     </div>
                   </div>
-                 
-                   
-                  
-                  
-                
-                
-                
-                </div>
-                <div class="col-md-6">
-                  
                 </div>
               </div>
-               <button type="submit" class="btn btn-primary mr-2" name="product_id" form="delete-form" value="{{product.PRODUCT_ID}}"> Delete </button>
-              <button type="submit" class="btn btn-primary mr-2" form="update-form" name="product_id" value="{{product.PRODUCT_ID}}"> Update </button>
-              <button class="btn btn-light" form="update-form">Cancel</button>
+              <div class="row mb-5">
+                 <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Product Type</th>
+                     <th>Importdate</th>
+                    <th>Quantity</th>
+                    <th>Cost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each orderDetails}}
+                  <tr>
+                    <td class="py-1">
+                      <img src="{{PRODUCT.IMAGE}}" alt="image">
+                    </td> 
+                    <td>{{PRODUCT.PRODUCT_NAME}}</td>
+                    <td>{{PRODUCT.CATEGORY_CATEGORY.CATEGORY_NAME}} </td>
+                    <td>{{format PRODUCT.IMPORTDATE}}</td>
+                    <td>{{QUANTITY}} </td>
+                    <td>{{PRODUCTPRICE}}</td>
+                  </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+              </div>
+              </div>
+               <button type="submit" class="btn btn-primary mr-2" name="order_id" form="delete-form" value="{{order.ORDER_ID}}"> Delete </button>
+              <button  type="submit" class="btn btn-light" form="cancel-form">Cancel</button>
             </form>
-            <form action="/product/setting/detail/delete" id="delete-form" method="POST">
+            <form action="/order/setting/detail/delete" id="delete-form" method="POST">
+            </form>
+            <form action="/order/setting" id="cancel-form" method="GET">
             </form>
           </div>
         </div>

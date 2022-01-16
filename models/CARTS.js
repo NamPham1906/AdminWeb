@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true,
       references: {
-        model: 'clients',
+        model: 'CLIENTS',
         key: 'CLIENT_ID'
       }
     },
@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true,
       references: {
-        model: 'products',
+        model: 'PRODUCTS',
         key: 'PRODUCT_ID'
       }
     },
@@ -29,7 +29,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'carts',
+    tableName: 'CARTS',
     timestamps: false,
     indexes: [
       {

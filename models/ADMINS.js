@@ -4,7 +4,6 @@ module.exports = function(sequelize, DataTypes) {
     ADMIN_ID: {
       type: DataTypes.CHAR(100),
       allowNull: false,
-      defaultValue: Sequelize.Sequelize.fn('uuid'),
       primaryKey: true
     },
     FIRSTNAME: {
@@ -28,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     IMAGE: {
-      type: DataTypes.STRING(250),
+      type: DataTypes.STRING(100),
       allowNull: true
     },
     USERNAME: {

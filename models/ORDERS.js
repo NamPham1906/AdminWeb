@@ -4,7 +4,6 @@ module.exports = function(sequelize, DataTypes) {
     ORDER_ID: {
       type: DataTypes.CHAR(100),
       allowNull: false,
-      defaultValue: Sequelize.Sequelize.fn('uuid'),
       primaryKey: true
     },
     ORDER_DATE: {
@@ -19,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.CHAR(100),
       allowNull: true,
       references: {
-        model: 'admins',
+        model: 'ADMINS',
         key: 'ADMIN_ID'
       }
     },
@@ -27,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.CHAR(100),
       allowNull: true,
       references: {
-        model: 'clients',
+        model: 'CLIENTS',
         key: 'CLIENT_ID'
       }
     },
@@ -37,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'orders',
+    tableName: 'ORDERS',
     timestamps: false,
     indexes: [
       {

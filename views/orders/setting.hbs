@@ -64,19 +64,19 @@
                             <td>{{ADDRESS}}</td>
                             <td>{{format ORDER_DATE}}</td>
                             <td>
-                              {{#ifEquals deliveries.DELIVERY_STATUS "FAILED"}}
+                              {{#ifEquals DELIVE_RIES.DELIVERY_STATUS "FAILED"}}
                                 <label class="badge badge-danger" style="width: 90px;">failed</label>
                               {{/ifEquals}}
                               
-                               {{#ifEquals deliveries.DELIVERY_STATUS "SUCCEED"}}
+                               {{#ifEquals DELIVE_RIES.DELIVERY_STATUS "SUCCEED"}}
                                 <label class="badge badge-success" style="width: 90px;">success</label>
                               {{/ifEquals}}
 
-                               {{#ifEquals deliveries.DELIVERY_STATUS "PACKAGING"}}
+                               {{#ifEquals DELIVE_RIES.DELIVERY_STATUS "PACKAGING"}}
                                 <label class="badge badge-warning" style="width: 90px;">Packaging</label>
                               {{/ifEquals}}
 
-                               {{#ifEquals deliveries.DELIVERY_STATUS "DELIVERING"}}
+                               {{#ifEquals DELIVE_RIES.DELIVERY_STATUS "DELIVERING"}}
                                <label class="badge badge-info" style="width: 90px;">Delivering</label>
                               {{/ifEquals}}
                             </td>

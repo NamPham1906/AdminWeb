@@ -4,14 +4,13 @@ module.exports = function(sequelize, DataTypes) {
     DELIVERY_ID: {
       type: DataTypes.CHAR(100),
       allowNull: false,
-      defaultValue: Sequelize.Sequelize.fn('uuid'),
       primaryKey: true
     },
     ORDER_ID: {
       type: DataTypes.CHAR(100),
       allowNull: true,
       references: {
-        model: 'orders',
+        model: 'ORDERS',
         key: 'ORDER_ID'
       }
     },
@@ -19,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.CHAR(100),
       allowNull: true,
       references: {
-        model: 'clients',
+        model: 'CLIENTS',
         key: 'CLIENT_ID'
       }
     },
@@ -28,14 +27,18 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     DELIVERY_STATUS: {
-      type: DataTypes.ENUM('FAILED','PACKAGING','DELIVERING','SUCCEED'),
+      type: DataTypes.ENUM('FAILED','PACKAGING','DELIVERING','SUCCEED','RETURN'),
+      allowNull: true
+    },
+    NOTE: {
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     MANAGER: {
       type: DataTypes.CHAR(100),
       allowNull: true,
       references: {
-        model: 'admins',
+        model: 'ADMINS',
         key: 'ADMIN_ID'
       }
     },
@@ -45,7 +48,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'deliveries',
+    tableName: 'DELIVERIES',
     timestamps: false,
     indexes: [
       {
