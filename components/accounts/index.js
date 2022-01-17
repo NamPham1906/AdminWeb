@@ -31,6 +31,8 @@ router.post('/setting/detail/update', upload.single('uploaded_newfile'),accountC
 
 router.post('/setting/detail/add', upload.single('uploaded_file'), accountController.addAccount);
 
+router.post('/setting/detail/lock',accountController.lockAccount);
 
+router.post('/setting/detail/unlock',accountController.unlockAccount);
 
 module.exports = router;

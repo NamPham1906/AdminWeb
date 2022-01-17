@@ -89,6 +89,26 @@ exports.updateAccount=(account_id ="0", filename,username, firstname,lastname,em
       });
 }
 
+exports.lockAccount=(account_id ="0") =>{
+    models.admins.update({ 
+        ISLOCK: true
+     }, {
+        where: {
+            ADMIN_ID: account_id
+        }
+      });
+}
+
+exports.unlockAccount=(account_id ="0") =>{
+    models.admins.update({ 
+        ISLOCK: false
+     }, {
+        where: {
+            ADMIN_ID: account_id
+        }
+      });
+}
+
 exports.updateAccountWithoutImage=(account_id ="0",username, firstname,lastname,email,gender,dateofbirth,password) =>{
     models.admins.update({ 
         USERNAME: username,

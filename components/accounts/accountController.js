@@ -65,3 +65,14 @@ exports.updateAccount = async (req,res)=> {
    
 }
 
+exports.lockAccount = async (req,res)=> {
+     await accountService.lockAccount(req.body.account_id);
+        res.redirect('/account/setting');
+}
+
+exports.unlockAccount = async (req,res)=> {
+    await accountService.unlockAccount(req.body.account_id);
+       res.redirect('/account/setting');
+}
+
+
