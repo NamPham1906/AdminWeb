@@ -9,7 +9,7 @@
                 </ol>
               </nav>
             </div>
-             <form class="form-sample" action="/chart/setting" method="POST" enctype="multipart/form-data">
+             <form class="form-sample" action="/chart/setting" method="POST" >
                 <div class="row">
                   <div class="form-group col-5">
                                           <label class="col-sm-3 col-form-label">From:</label>
@@ -25,7 +25,7 @@
                   </div>
                
                 <div class="form-group col-2">
-                  <label class="col-sm-3 col-form-label" style="margin-bottom: 1.7rem;"">  </label>
+                  <label class="col-sm-3 col-form-label" style="margin-bottom: 1.7rem;">  </label>
                     <div class="col-sm-9">
                         <button type="submit" class="btn btn-primary mr-2" > Calculate </button>
                     </div>
@@ -44,7 +44,7 @@
                       </div>
                       <i class="card-icon-indicator mdi mdi-basket bg-inverse-icon-warning"></i>
                     </div>
-                    <h6 class="text-white">18.33% Since last month</h6>
+                    <h6 class="text-white"></h6>
                   </div>
                 </div>
               </div>
@@ -53,13 +53,13 @@
             <div class="card-body px-3 py-4">
               <div class="d-flex justify-content-between align-items-start">
                 <div class="color-card">
-                  <p class="mb-0 color-card-head">Margin</p>
-                  <h2 class="text-white"> $5,300.<span class="h5">00</span>
+                  <p class="mb-0 color-card-head">Sale</p>
+                  <h2 class="text-white"> {{report.TOTALPRODUCT}}<span class="h5"> products</span>
                   </h2>
                 </div>
                 <i class="card-icon-indicator mdi mdi-cube-outline bg-inverse-icon-danger"></i>
               </div>
-              <h6 class="text-white">13.21% Since last month</h6>
+              <h6 class="text-white"></h6>
             </div>
           </div>
         </div>
@@ -68,13 +68,13 @@
             <div class="card-body px-3 py-4">
               <div class="d-flex justify-content-between align-items-start">
                 <div class="color-card">
-                  <p class="mb-0 color-card-head">Orders</p>
-                  <h2 class="text-white"> $1,753.<span class="h5">00</span>
+                  <p class="mb-0 color-card-head">Total Orders</p>
+                  <h2 class="text-white"> {{report.TOTALORDER}} <span class="h5"></span>
                   </h2>
                 </div>
                 <i class="card-icon-indicator mdi mdi-briefcase-outline bg-inverse-icon-primary"></i>
               </div>
-              <h6 class="text-white">67.98% Since last month</h6>
+              <h6 class="text-white"></h6>
             </div>
           </div>
         </div>

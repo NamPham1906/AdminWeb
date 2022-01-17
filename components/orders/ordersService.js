@@ -42,3 +42,14 @@ exports.deleteOrder=(order_id ="0") =>{
         }
       });
 }
+
+exports.orderTime=(from, to) =>{
+    return models.orders.findAll({
+        where: {    
+            [Op.and]: [{ORDER_DATE: {[Op.gte]: from}}, {ORDER_DATE: {[Op.lte]: to}} ],
+            ISDELETED: false
+          },
+        raw:true,
+        nest : true
+    });
+};

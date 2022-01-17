@@ -16,6 +16,29 @@ exports.listFillter=(order_id ="0") =>{
     });
 };
 
+exports.totalBill=(order_id ="0") =>{
+    return models.orders_detail.sum("PRODUCTPRICE",{
+        where: {
+            ORDER_ID: order_id,
+            ISDELETED: false
+          },
+        raw:true,
+        nest : true
+    });
+};
+
+exports.totalProducts=(order_id ="0") =>{
+    return models.orders_detail.sum("QUANTITY",{
+        where: {
+            ORDER_ID: order_id,
+            ISDELETED: false
+          },
+        raw:true,
+        nest : true
+    });
+};
+
+
 exports.deleteOrderDetail=(order_id ="0") =>{
     models.orders_detail.update({ 
         ISDELETED: true
