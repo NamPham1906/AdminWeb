@@ -22,7 +22,7 @@ exports.list=(page = 0, itemPerPage = 10 ) =>{
 
 exports.orderDetail=(order_id ="0") =>{
     return models.orders.findOne({
-        include: [ {model: models.clients , as: "CLIENT",attributes: ['LASTNAME']}, {model: models.admins , as: "MANAGER_ADMIN",attributes: ['LASTNAME']}, {model: models.deliveries , as: "DELIVE_RIES",attributes: ['DELIVERY_STATUS']}   ],
+        include: [{model: models.bills , as: "BILL"}, {model: models.clients , as: "CLIENT",attributes: ['LASTNAME']}, {model: models.admins , as: "MANAGER_ADMIN",attributes: ['LASTNAME']}, {model: models.deliveries , as: "DELIVE_RIES",attributes: ['DELIVERY_STATUS']}   ],
         where: {
         ORDER_ID: order_id,
         ISDELETED: false

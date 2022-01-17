@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS freshopdb; 
-CREATE DATABASE IF NOT EXISTS freshopdb;
-USE freshopdb;
+DROP DATABASE IF EXISTS freshshopdb; 
+CREATE DATABASE IF NOT EXISTS freshshopdb;
+USE freshshopdb;
 
 create table products (
     PRODUCT_ID CHAR(100) NOT NULL,

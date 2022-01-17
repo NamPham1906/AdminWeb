@@ -110,12 +110,41 @@
                     <td>{{PRODUCT.CATEGORY_CATEGORY.CATEGORY_NAME}} </td>
                     <td>{{format PRODUCT.IMPORTDATE}}</td>
                     <td>{{QUANTITY}} </td>
-                    <td>{{PRODUCTPRICE}}</td>
+                    <td>{{PRODUCTPRICE}} $</td>
                   </tr>
                   {{/each}}
                 </tbody>
               </table>
               </div>
+              </div>
+               <div class="row">
+                 <div class="col-8"></div>
+                <div class="col-4">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Payment</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="payment" readonly="readonly" placeholder="Payment" class="form-control" value="{{order.BILL.PAYMENT}}">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Discount</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="discount" readonly="readonly" placeholder="Discount" class="form-control" value="{{order.BILL.DISCOUNT}} $">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Tax</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="tax" readonly="readonly" placeholder="Tax" class="form-control" value="{{order.BILL.TAX}} $">
+                    </div>
+                  </div>
+                   <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Shipping cost</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="Shipping cost" readonly="readonly" placeholder="Shipping cost" class="form-control" value="{{order.BILL.SHIPPING_COST}} $">
+                    </div>
+                  </div>
+                </div>
               </div>
                <button type="submit" class="btn btn-primary mr-2" name="order_id" form="delete-form" value="{{order.ORDER_ID}}"> Delete </button>
               <button  type="submit" class="btn btn-light" form="cancel-form">Cancel</button>
