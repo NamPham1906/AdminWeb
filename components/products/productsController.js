@@ -2,6 +2,7 @@ const productService = require('./productService');
 const accountService = require('../accounts/accountService');
 const categoryService = require('../categories/categoryService');
 
+//GET FORM
 exports.list = async (req,res)=> {
     const products = await productService.list(!isNaN(req.query.page) && req.query.page > 0? req.query.page - 1:0);
     res.render('products/setting', ({ products,page:req.query.page}));
@@ -14,13 +15,15 @@ exports.productDetail = async (req,res)=> {
     res.render('products/details',  {product, categories, accounts} );
 }
 
-// get add product form 
+
 exports.productAdd = async (req,res)=> {
     const accounts = await accountService.allList();
     const categories = await categoryService.allList();
     res.render('products/add', {categories, accounts});
 }
 
+
+// POST FORM
 exports.deleteProduct = async (req,res)=> {
     await productService.deleteProduct(req.body.product_id)
     res.redirect('/product/setting');
@@ -54,7 +57,6 @@ exports.updateProduct = async (req,res)=> {
    
 }
 
-// add product to database 
 exports.addProduct = async (req,res)=> {
     await productService.addProduct(
                                        req.body.product_name,

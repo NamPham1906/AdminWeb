@@ -16,7 +16,6 @@ const indexRouter = require('./components/index');
 const loginRouter = require('./components/auth/index');
 const usersRouter = require('./components/user/index');
 const accountsRouter = require('./components/accounts/index');
-const shopsRouter = require('./components/shops/index');
 const productsRouter = require('./components/products/index');
 const ordersRouter = require('./components/orders/index');
 const chartsRouter = require('./components/charts/index');
@@ -83,7 +82,6 @@ app.use(function(req, res, next){
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
 app.use('/account', accountsRouter);
-app.use('/shop', shopsRouter);
 app.use('/product', productsRouter);
 app.use('/order', ordersRouter);
 app.use('/chart', chartsRouter);

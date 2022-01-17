@@ -13,14 +13,14 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 const productsController = require('./productsController');
 
-
-
+// GET FORM
 router.get('/setting',productsController.list);
 
 router.get('/setting/detail', productsController.productDetail);
 
 router.get('/setting/add', productsController.productAdd);
 
+// POST FORM
 router.post('/setting/detail/delete', productsController.deleteProduct);
 
 router.post('/setting/detail/update', upload.single('uploaded_newfile'),productsController.updateProduct);

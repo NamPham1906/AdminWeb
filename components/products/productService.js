@@ -5,6 +5,7 @@ const {models} = require('../../models/index');
 const { v1: uuidv1 } = require('uuid');
 const { Op } = require("sequelize");
 
+// GET FORM
 exports.listFillter=(page = 0, itemPerPage = 10, product_name = null,category = null,sold = null,quantity = null,cost = null,importer = null,importdate = null) =>{
     return models.products.findAll({
         where: {
@@ -49,6 +50,7 @@ exports.productDetail=(product_id ="0") =>{
     });
 }
 
+// POST FORM
 exports.deleteProduct=(product_id ="0") =>{
     models.products.update({ 
         ISDELETED: true
