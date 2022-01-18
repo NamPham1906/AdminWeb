@@ -13,7 +13,7 @@
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <p class="card-description"> Page 1 </p>
+            <p class="card-description"> Page {{currentPage}} </p>
             </p>
             <form class="form-sample" action="/product/setting/filter" method="POST">
               <div class="row">
@@ -90,11 +90,11 @@
       <div class="mr-auto">
         <nav aria-label="Page navigation example">
           <ul class="pagination mb-0">
-            <li class="page-item"><a class="page-link" href="?page=1">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="?page=previous-{{currentPage}}">Previous</a></li>
              {{#each pageArray }}  
             <li class="page-item"><a class="page-link" href="?page={{this.PAGE}}">{{this.PAGE}}</a></li>
             {{/each}}
-            <li class="page-item"><a class="page-link" href="?page=7">Next</a></li>
+            <li class="page-item"><a class="page-link" href="?page=next-{{currentPage}}">Next</a></li>
           </ul>
         </nav>
       </div>

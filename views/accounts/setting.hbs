@@ -14,7 +14,7 @@
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <p class="card-description"> page 1 </p>
+            <p class="card-description"> page {{currentPage}} </p>
             </p>
             <div class="table-responsive">
               <table class="table table-striped">
@@ -55,20 +55,19 @@
       </div>
     </div>
     <div class="d-flex justify-content-between align-items-stretch">
+      {{#if pageArray }}
       <div class="mr-auto">
         <nav aria-label="Page navigation example">
           <ul class="pagination mb-0">
-            <li class="page-item"><a class="page-link" href="?page=1">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
-            <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
-            <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
-            <li class="page-item"><a class="page-link" href="?page=4">4</a></li>
-            <li class="page-item"><a class="page-link" href="?page=5">5</a></li>
-            <li class="page-item"><a class="page-link" href="?page=6">6</a></li>
-            <li class="page-item"><a class="page-link" href="?page=7">Next</a></li>
+            <li class="page-item"><a class="page-link" href="?page=previous-{{currentPage}}">Previous</a></li>
+             {{#each pageArray }}  
+            <li class="page-item"><a class="page-link" href="?page={{this.PAGE}}">{{this.PAGE}}</a></li>
+            {{/each}}
+            <li class="page-item"><a class="page-link" href="?page=next-{{currentPage}}">Next</a></li>
           </ul>
         </nav>
       </div>
+       {{/if}}
       <button type="submit" class="btn btn-primary p-0">
         <a class="p-2" href="/account/setting/add"> Add New Account</a>
       </button>

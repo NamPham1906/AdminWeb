@@ -21,16 +21,28 @@ exports.list = async (req,res,next)=> {
     try {
         const total = await productService.alllist();
         let totalitem=total.length;
-        totalPage = Math.ceil(totalitem/itemPerPage) - 1;
+        totalPage = Math.ceil(totalitem/itemPerPage);
 
     }catch (error) {
         console.log(error);
         next(error);
     }
+    let currentPage = 1;
+    let queryPage = String(req.query.page);
 
-    const queryPage = req.query.page;
+    if (queryPage.includes("previous")){
+        queryPage = queryPage.slice(queryPage.indexOf("-") + 1, queryPage.length);
+         currentPage = (queryPage && !Number.isNaN(queryPage)) ? parseInt(queryPage) - 1 : 1;
+    }else if (queryPage.includes("next")){
+        queryPage = queryPage.slice(queryPage.indexOf("-") + 1, queryPage.length);
+        currentPage = (queryPage && !Number.isNaN(queryPage)) ? parseInt(queryPage) + 1 : 1;
+    }
+    else {
+        currentPage = (queryPage && !Number.isNaN(queryPage)) ? parseInt(queryPage) : 1;
+    }
+    
     //CHECK DATA 
-    let currentPage = (queryPage && !Number.isNaN(queryPage)) ? parseInt(queryPage) : 1;
+    
     currentPage = (currentPage > 0) ? currentPage : 1;
     currentPage = (currentPage <= totalPage) ? currentPage : totalPage
     
@@ -81,7 +93,7 @@ exports.list = async (req,res,next)=> {
                 }
             }
         } else if (totalPage - border + 1 <= currentPage){
-            for(let i = totalPage - maximumPagination ; i <= totalPage; i++){
+            for(let i = totalPage - maximumPagination + 1 ; i <= totalPage; i++){
                 if(currentPage === i){
                     pageArray.push({
                         PAGE: i,
@@ -97,8 +109,8 @@ exports.list = async (req,res,next)=> {
             }
         }
     }
-    const products = await productService.list(currentPage,itemPerPage);
-    res.render('products/setting', ({ products,page:req.query.page, pageArray}));
+    const products = await productService.list(currentPage-1,itemPerPage);
+    res.render('products/setting', ({ products,currentPage, pageArray}));
 }
 
 

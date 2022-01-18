@@ -15,7 +15,7 @@ exports.allList=() =>{
 };
 
 
-exports.list=(page = 0, itemPerPage = 10 ) =>{
+exports.list=(page = 0,itemPerPage) =>{
     return models.clients.findAll({
         where: {
             ISDELETED: false

@@ -6,7 +6,7 @@ const { Op } = require("sequelize");
 
 //, {model: models.orders_return ,as: "orders_returns"}
 
-exports.list=(page = 0, itemPerPage = 10 ) =>{
+exports.list=(page = 0, itemPerPage ) =>{
     return models.orders.findAll({
         include: [{model: models.clients , as: "CLIENT",attributes: ['LASTNAME']},{model: models.deliveries , as: "DELIVE_RIES",attributes: ['DELIVERY_STATUS']}],
         where: {
@@ -14,6 +14,17 @@ exports.list=(page = 0, itemPerPage = 10 ) =>{
           },
         offset:page*itemPerPage,
         limit: itemPerPage,
+        raw:true,
+        nest : true
+    });
+};
+
+exports.alllist=() =>{
+    return models.orders.findAll({
+        include: [{model: models.clients , as: "CLIENT",attributes: ['LASTNAME']},{model: models.deliveries , as: "DELIVE_RIES",attributes: ['DELIVERY_STATUS']}],
+        where: {
+            ISDELETED: false
+          },
         raw:true,
         nest : true
     });
