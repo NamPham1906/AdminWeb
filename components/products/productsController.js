@@ -3,12 +3,6 @@ const accountService = require('../accounts/accountsService');
 const categoryService = require('../categories/categoriesService');
 
 //GET FORM
-// exports.list = async (req,res)=> {
-//     const products = await productService.list(!isNaN(req.query.page) && req.query.page > 0? req.query.page - 1:0);
-//     res.render('products/setting', ({ products,page:req.query.page}));
-// }
-
-
 const itemPerPage = 10;
 const maximumPagination = 5;
 const border = Math.floor(maximumPagination/2);

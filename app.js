@@ -13,13 +13,13 @@ const handlebars = require('./public/assets/js/handlebars-helper')(handlebar);
 
 
 const indexRouter = require('./components/index');
-const loginRouter = require('./components/auth/index');
-const usersRouter = require('./components/user/index');
-const accountsRouter = require('./components/accounts/index');
-const clientsRouter = require('./components/clients/index');
-const productsRouter = require('./components/products/index');
-const ordersRouter = require('./components/orders/index');
-const chartsRouter = require('./components/charts/index');
+const loginRouter = require('./components/auth/loginRouter');
+const accountsRouter = require('./components/accounts/accountsRouter');
+const clientsRouter = require('./components/clients/clientsRouter');
+const productsRouter = require('./components/products/productsRouter');
+const categoriesRouter = require('./components/categories/categoriesRouter');
+const ordersRouter = require('./components/orders/ordersRouter');
+const chartsRouter = require('./components/charts/chartsRouter');
 const passport = require('./components/auth/passport');
 const flash = require('connect-flash');
 
@@ -81,10 +81,10 @@ app.use(function(req, res, next){
 })
 
 app.use('/', indexRouter);
-app.use('/user', usersRouter);
 app.use('/account', accountsRouter);
 app.use('/client', clientsRouter);
 app.use('/product', productsRouter);
+app.use('/category', categoriesRouter);
 app.use('/order', ordersRouter);
 app.use('/chart', chartsRouter);
 

@@ -86,7 +86,7 @@ exports.list = async (req,res,next)=> {
                 }
             }
         } else if (totalPage - border + 1 <= currentPage){
-            for(let i = totalPage - maximumPagination ; i <= totalPage; i++){
+            for(let i = totalPage - maximumPagination + 1 ; i <= totalPage; i++){
                 if(currentPage === i){
                     pageArray.push({
                         PAGE: i,
@@ -102,7 +102,7 @@ exports.list = async (req,res,next)=> {
             }
         }
     }
-    const accounts = await accountService.list(currentPage-1,itemPerPage);
+    const accounts = await accountService.list(currentPage - 1,itemPerPage);
     res.render('accounts/setting', ({ accounts,currentPage, pageArray}));
 }
 
