@@ -6,12 +6,14 @@ exports.timeReport = async (req,res)=> {
     const revenue = await chartService.revenue(req.body.from, req.body.to);
     const totalProduct = await chartService.totalProducts(req.body.from, req.body.to);
     const totalOrder = await chartService.totalOrders(req.body.from, req.body.to);
+    const bestseller = await chartService.bestsellerProducts(req.body.from, req.body.to);
     const report = {
         REVENUE: revenue,
         TOTALPRODUCT: totalProduct,
         TOTALORDER: totalOrder,
         FROM: req.body.from,
-        TO: req.body.to
+        TO: req.body.to,
+        BESTSELLERPRODUCTS: bestseller
       };
     res.render('charts/setting',  {report});
 }

@@ -37,7 +37,6 @@ create table  clients
     EMAIL VARCHAR(50), 
 	PASS VARCHAR(1000),  
     ISDELETED BOOL,
-    ISLOCK BOOL,
 	PRIMARY KEY (CLIENT_ID)
 )ENGINE = INNODB;
 
@@ -162,10 +161,10 @@ INSERT INTO ADMINS VALUES ("a3ba61aa-6de5-11ec-ae9b-651e6ab7568b","Bryce","Graha
 INSERT INTO ADMINS VALUES ("a4ba61aa-6de5-11ec-ae9b-651e6ab7568b","Amie","Charla","FEMALE","1991/9/8","amiecharla@gmail.com","/assets/images/accounts/face4.jpg","user04","pass123",false,false);
 
 #----------------------------------CLIENTS
-INSERT INTO CLIENTS VALUES ("c1ba61aa-6de5-11ec-ae9b-651e6ab7568b","Diana","Granet","Female","2000/12/12","0909354345","/assets/images/clients/client01.jpg","dianagranet@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false,false);
-INSERT INTO CLIENTS VALUES ("c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","Nicole","Quinn","Female","1995/1/6","0898161616","/assets/images/clients/client02.jpg","nicolequinn@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false,false);
-INSERT INTO CLIENTS VALUES ("c3ba61aa-6de5-11ec-ae9b-651e6ab7568b","Davis","Lambert","Male","1990/4/24","0797645456","/assets/images/clients/client03.jpg","davislambert@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false,false);
-INSERT INTO CLIENTS VALUES ("c4ba61aa-6de5-11ec-ae9b-651e6ab7568b","Cecelia","Brandy","Female","1989/1/18","0808483834","/assets/images/clients/client04.jpg","ceceliabrandy@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false,false);
+INSERT INTO CLIENTS VALUES ("c1ba61aa-6de5-11ec-ae9b-651e6ab7568b","Diana","Granet","Female","2000/12/12","0909354345","/assets/images/clients/client01.jpg","dianagranet@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false);
+INSERT INTO CLIENTS VALUES ("c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","Nicole","Quinn","Female","1995/1/6","0898161616","/assets/images/clients/client02.jpg","nicolequinn@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false);
+INSERT INTO CLIENTS VALUES ("c3ba61aa-6de5-11ec-ae9b-651e6ab7568b","Davis","Lambert","Male","1990/4/24","0797645456","/assets/images/clients/client03.jpg","davislambert@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false);
+INSERT INTO CLIENTS VALUES ("c4ba61aa-6de5-11ec-ae9b-651e6ab7568b","Cecelia","Brandy","Female","1989/1/18","0808483834","/assets/images/clients/client04.jpg","ceceliabrandy@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false);
 
 #----------------------------------CATEGORIES
 INSERT INTO categories VALUES ("c1ba61aa-6de5-11ec-ae9b-651e6ab7568b","Fruits",false);
@@ -336,8 +335,8 @@ INSERT INTO ORDERS VALUES ("o7ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 2:
 INSERT INTO ORDERS VALUES ("o8ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 18:34:09","23-5 Nguyen Van Cu, Phuong 1, Quan 5, Ho Chi Minh", "a3ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c3ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
 INSERT INTO ORDERS VALUES ("o9ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-16 19:02:31","62 Cong Hoa, Phuong 4, Quan Tan Binh, Ho Chi Minh", "a2ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
 INSERT INTO ORDERS VALUES ("o10ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-17 07:10:54","23-5 Nguyen Van Cu, Phuong 1, Quan 5, Ho Chi Minh", "a4ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c2ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
-INSERT INTO ORDERS VALUES ("o11ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 2:02:31","62 Cong Hoa, Phuong 4, Quan Tan Binh, Ho Chi Minh", "a2ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c1ba61aa-6de5-11ec-ae9b-651e6ab7568b",true);
-INSERT INTO ORDERS VALUES ("o12ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 18:34:09","23-5 Nguyen Van Cu, Phuong 1, Quan 5, Ho Chi Minh", "a3ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c1ba61aa-6de5-11ec-ae9b-651e6ab7568b",true);
+INSERT INTO ORDERS VALUES ("o11ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 2:02:31","62 Cong Hoa, Phuong 4, Quan Tan Binh, Ho Chi Minh", "a2ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c2ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO ORDERS VALUES ("o12ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 18:34:09","23-5 Nguyen Van Cu, Phuong 1, Quan 5, Ho Chi Minh", "a3ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c4ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
 
 #----------------------------------ORDERS DETAIL
 INSERT INTO ORDERS_DETAIL VALUES ("o1ba61aa-6de5-11ec-ae9b-651e6ab7568b","ba61aa-6de5-11ec-ae9b-651e6ab7568b01",5,200,false);
@@ -366,8 +365,8 @@ INSERT INTO DELIVERIES VALUES ("d1ba61aa-6de5-11ec-ae9b-651e6ab7568b","o2ba61aa-
 INSERT INTO DELIVERIES VALUES ("d2ba61aa-6de5-11ec-ae9b-651e6ab7568b","o2ba61aa-6de5-11ec-ae9b-651e6ab7568b","c1ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-12","SUCCEED",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
 INSERT INTO DELIVERIES VALUES ("d3ba61aa-6de5-11ec-ae9b-651e6ab7568b","o1ba61aa-6de5-11ec-ae9b-651e6ab7568b","c3ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-12","SUCCEED",null,"a3ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
 INSERT INTO DELIVERIES VALUES ("d4ba61aa-6de5-11ec-ae9b-651e6ab7568b","o3ba61aa-6de5-11ec-ae9b-651e6ab7568b","c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-13","SUCCEED",null,"a4ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
-INSERT INTO DELIVERIES VALUES ("d5ba61aa-6de5-11ec-ae9b-651e6ab7568b","o11ba61aa-6de5-11ec-ae9b-651e6ab7568b","c1ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-11","SUCCEED",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
-INSERT INTO DELIVERIES VALUES ("d6ba61aa-6de5-11ec-ae9b-651e6ab7568b","o12ba61aa-6de5-11ec-ae9b-651e6ab7568b","c1ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-11","SUCCEED",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO DELIVERIES VALUES ("d5ba61aa-6de5-11ec-ae9b-651e6ab7568b","o11ba61aa-6de5-11ec-ae9b-651e6ab7568b","c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-11","DELIVERING",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO DELIVERIES VALUES ("d6ba61aa-6de5-11ec-ae9b-651e6ab7568b","o12ba61aa-6de5-11ec-ae9b-651e6ab7568b","c4ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-11","DELIVERING",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
 INSERT INTO DELIVERIES VALUES ("d7ba61aa-6de5-11ec-ae9b-651e6ab7568b","o4ba61aa-6de5-11ec-ae9b-651e6ab7568b","c4ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15","RETURN","damaged goods","a4ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
 INSERT INTO DELIVERIES VALUES ("d8ba61aa-6de5-11ec-ae9b-651e6ab7568b","o5ba61aa-6de5-11ec-ae9b-651e6ab7568b","c1ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-16","RETURN","order is canceled","a2ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
 INSERT INTO DELIVERIES VALUES ("d9ba61aa-6de5-11ec-ae9b-651e6ab7568b","o6ba61aa-6de5-11ec-ae9b-651e6ab7568b","c3ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-17","RETURN","order is canceled","a3ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);

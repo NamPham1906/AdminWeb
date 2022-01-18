@@ -2,6 +2,7 @@ const { raw } = require('express');
 const { options } = require('..');
 const {models} = require('../../models/index');
 const { Op } = require("sequelize");
+const sequelize = require("sequelize");
 
 exports.listFillter=(order_id ="0") =>{
     return models.orders_detail.findAll({
@@ -47,3 +48,24 @@ exports.deleteOrderDetail=(order_id ="0") =>{
         }
       });
 }
+
+
+
+
+exports.listFillterTime=(from, to) =>{
+    return models.orders_detail.findAll({
+        order: [['QUANTITY', 'DESC']],
+        include: [{model: models.orders , as: "ORDER",where: {
+            [Op.and]: [{ORDER_DATE: {[Op.gte]: from}}, {ORDER_DATE: {[Op.lte]: to}} ], ISDELETED: false
+          }},{model: models.products , as: "PRODUCT",include: [ {model: models.categories, as: "CATEGORY_CATEGORY"}]} ],
+       
+          where: {
+            ISDELETED: false
+          }, 
+         
+        raw:true,
+        nest : true,
+     
+    });
+};
+

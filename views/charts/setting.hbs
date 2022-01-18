@@ -89,12 +89,12 @@
                           <th>Product Name</th>
                           <th>Product Type</th>
                           <th>Importdate</th>
-                          <th>Quantity</th>
                           <th>Cost</th>
+                          <th>Sales</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {{#each report.PRODUCTS}}
+                        {{#each report.BESTSELLERPRODUCTS}}
                         <tr>
                           <td class="py-1">
                             <img src="{{PRODUCT.IMAGE}}" alt="image">
@@ -102,8 +102,8 @@
                           <td>{{PRODUCT.PRODUCT_NAME}}</td>
                           <td>{{PRODUCT.CATEGORY_CATEGORY.CATEGORY_NAME}} </td>
                           <td>{{format PRODUCT.IMPORTDATE}}</td>
-                          <td>{{QUANTITY}} </td>
                           <td>{{PRODUCTPRICE}} $</td>
+                          <td>{{QUANTITY}} </td>
                         </tr>
                         {{/each}}
                       </tbody>

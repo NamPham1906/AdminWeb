@@ -1,12 +1,12 @@
 const orderService = require('../orders/ordersService');
 const orderDetailService = require('../order_details/orderDetailsService');
-var today = new Date();
+const today = new Date();
 
 exports.revenue=async (from ,to) =>{
     
-    to= (new Date(to)).getTime()< today.getTime()?to:today;
-    from = (new Date(from)).getTime() < (new Date(to)).getTime()? from:to;
-    const orders = await orderService.orderTime((new Date(from)).getTime(), (new Date(to)).getTime());
+    const todate= (new Date(to)).getTime()< today.getTime()?to:today;
+    const fromdate = (new Date(from)).getTime() < (new Date(todate)).getTime()? from:todate;
+    const orders = await orderService.orderTime((new Date(fromdate)).getTime(), (new Date(todate)).getTime());
     var revenue = 0;
     
      for (const order of orders) {
@@ -18,9 +18,9 @@ exports.revenue=async (from ,to) =>{
 
 
 exports.totalProducts=async (from ,to) =>{
-    to= (new Date(to)).getTime()< today.getTime()?to:today;
-    from = (new Date(from)).getTime() < (new Date(to)).getTime()? from:to;
-    const orders = await orderService.orderTime((new Date(from)).getTime(), (new Date(to)).getTime());
+    const todate= (new Date(to)).getTime()< today.getTime()?to:today;
+    const fromdate = (new Date(from)).getTime() < (new Date(todate)).getTime()? from:todate;
+    const orders = await orderService.orderTime((new Date(fromdate)).getTime(), (new Date(todate)).getTime());
     var totalProduct = 0;
     
      for (const order of orders) {
@@ -31,12 +31,40 @@ exports.totalProducts=async (from ,to) =>{
 };
 
 exports.totalOrders=async (from ,to) =>{
-    to= (new Date(to)).getTime()< today.getTime()?to:today;
-    from = (new Date(from)).getTime() < (new Date(to)).getTime()? from:to;
-    const orders = await orderService.orderTime((new Date(from)).getTime(), (new Date(to)).getTime());
-    
+    const todate= (new Date(to)).getTime()< today.getTime()?to:today;
+    const fromdate = (new Date(from)).getTime() < (new Date(todate)).getTime()? from:todate;
+    const orders = await orderService.orderTime((new Date(fromdate)).getTime(), (new Date(todate)).getTime());
     
     return orders.length;
 };
 
+
+exports.bestsellerProducts=async (from ,to) =>{
+    var todate= (new Date(to)).getTime()< today.getTime()?to:today;
+    var fromdate = (new Date(from)).getTime() < (new Date(todate)).getTime()? from:todate;
+
+    var orderDetails = await orderDetailService.listFillterTime((new Date(fromdate)).getTime(), (new Date(todate)).getTime());
+
+   
+     for (let i = orderDetails.length-1; i>=0; i--){
+        for (let j = i - 1; j>=0; j--){
+            if ((orderDetails[i].PRODUCT_ID === orderDetails[j].PRODUCT_ID)){
+                orderDetails[i].QUANTITY += orderDetails[j].QUANTITY;
+                orderDetails.splice(j, 1);
+            }
+        }
+     }
+    
+     for (let i = orderDetails.length-1; i>=0; i--){
+        for (let j = i - 1; j>=0; j--){
+            if ((orderDetails[i].QUANTITY >= orderDetails[j].QUANTITY)){
+              const temp = orderDetails[i];
+              orderDetails[i] = orderDetails[j];
+              orderDetails[j] = temp;
+            }
+        }
+     }
+
+    return orderDetails;
+};
 
