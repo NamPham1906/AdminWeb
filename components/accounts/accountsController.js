@@ -1,4 +1,4 @@
-const accountService = require('./accountService');
+const accountService = require('./accountsService');
 
 // GET FORM
 exports.list = async (req,res)=> {

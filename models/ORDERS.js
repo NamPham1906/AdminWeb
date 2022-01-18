@@ -18,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.CHAR(100),
       allowNull: true,
       references: {
-        model: 'ADMINS',
+        model: 'admins',
         key: 'ADMIN_ID'
       }
     },
@@ -26,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.CHAR(100),
       allowNull: true,
       references: {
-        model: 'CLIENTS',
+        model: 'clients',
         key: 'CLIENT_ID'
       }
     },
@@ -36,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'ORDERS',
+    tableName: 'orders',
     timestamps: false,
     indexes: [
       {

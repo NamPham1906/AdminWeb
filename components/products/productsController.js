@@ -1,6 +1,6 @@
 const productService = require('./productService');
-const accountService = require('../accounts/accountService');
-const categoryService = require('../categories/categoryService');
+const accountService = require('../accounts/accountsService');
+const categoryService = require('../categories/categoriesService');
 
 //GET FORM
 exports.list = async (req,res)=> {

@@ -5,7 +5,7 @@ const { raw } = require('express');
 const { options } = require('..');
 const {models} = require('../../models/index');
 const { Op } = require("sequelize");
-const accountService = require('../accounts/accountService');
+const accountService = require('../accounts/accountsService');
 
 
 passport.use(new LocalStrategy(

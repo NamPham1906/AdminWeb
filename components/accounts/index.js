@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const accountController = require('./accountController');
+const accountController = require('./accountsController');
 const multer  = require('multer');
 const path = require('path');
 const storage = multer.diskStorage({

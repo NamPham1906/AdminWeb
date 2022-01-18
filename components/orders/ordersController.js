@@ -1,6 +1,6 @@
 const orderService = require('./ordersService');
 const orderDetailService = require('../order_details/orderDetailsService');
-const accountService = require('../accounts/accountService');
+const accountService = require('../accounts/accountsService');
 const deliveryService = require('../deliveries/deliveriesService');
 const billService = require ('../bill/billsService');
 

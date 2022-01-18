@@ -46,7 +46,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.CHAR(100),
       allowNull: true,
       references: {
-        model: 'ADMINS',
+        model: 'admins',
         key: 'ADMIN_ID'
       }
     },

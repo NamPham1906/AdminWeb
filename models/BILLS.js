@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true,
       references: {
-        model: 'ORDERS',
+        model: 'orders',
         key: 'ORDER_ID'
       }
     },
@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'BILLS',
+    tableName: 'bills',
     timestamps: false,
     indexes: [
       {
