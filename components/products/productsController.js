@@ -3,10 +3,105 @@ const accountService = require('../accounts/accountsService');
 const categoryService = require('../categories/categoriesService');
 
 //GET FORM
-exports.list = async (req,res)=> {
-    const products = await productService.list(!isNaN(req.query.page) && req.query.page > 0? req.query.page - 1:0);
-    res.render('products/setting', ({ products,page:req.query.page}));
+// exports.list = async (req,res)=> {
+//     const products = await productService.list(!isNaN(req.query.page) && req.query.page > 0? req.query.page - 1:0);
+//     res.render('products/setting', ({ products,page:req.query.page}));
+// }
+
+
+const itemPerPage = 10;
+const maximumPagination = 5;
+const border = Math.floor(maximumPagination/2);
+let totalPage = 1;
+
+exports.list = async (req,res,next)=> {
+    let pageArray = [];
+    
+    // SETUP
+    try {
+        const total = await productService.alllist();
+        let totalitem=total.length;
+        totalPage = Math.ceil(totalitem/itemPerPage) - 1;
+
+    }catch (error) {
+        console.log(error);
+        next(error);
+    }
+
+    const queryPage = req.query.page;
+    //CHECK DATA 
+    let currentPage = (queryPage && !Number.isNaN(queryPage)) ? parseInt(queryPage) : 1;
+    currentPage = (currentPage > 0) ? currentPage : 1;
+    currentPage = (currentPage <= totalPage) ? currentPage : totalPage
+    
+    if (totalPage <= maximumPagination){
+        for(let i = 1 ; i <= totalPage; i++){
+            if(currentPage === i){
+                pageArray.push({
+                    PAGE: i,
+                    ISCURRENT:  true
+                });
+            }
+            else{
+                pageArray.push({
+                    PAGE: i,
+                    ISCURRENT:  false
+                });
+            }
+        }
+    }else{
+        if ((border < currentPage) && (currentPage < totalPage - border + 1)){
+            for(let i = currentPage - border ; i <= currentPage + border; i++){
+                if(currentPage === i){
+                    pageArray.push({
+                        PAGE: i,
+                        ISCURRENT:  true
+                    });
+                }
+                else{
+                    pageArray.push({
+                        PAGE: i,
+                        ISCURRENT:  false
+                    });
+                }
+            }
+        }else if (currentPage <= border) {
+            for(let i = 1 ; i <= maximumPagination; i++){
+                if(currentPage === i){
+                    pageArray.push({
+                        PAGE: i,
+                        ISCURRENT:  true
+                    });
+                }
+                else{
+                    pageArray.push({
+                        PAGE: i,
+                        ISCURRENT:  false
+                    });
+                }
+            }
+        } else if (totalPage - border + 1 <= currentPage){
+            for(let i = totalPage - maximumPagination ; i <= totalPage; i++){
+                if(currentPage === i){
+                    pageArray.push({
+                        PAGE: i,
+                        ISCURRENT:  true
+                    });
+                }
+                else{
+                    pageArray.push({
+                        PAGE: i,
+                        ISCURRENT:  false
+                    });
+                }
+            }
+        }
+    }
+    const products = await productService.list(currentPage,itemPerPage);
+    res.render('products/setting', ({ products,page:req.query.page, pageArray}));
 }
+
+
 
 exports.productDetail = async (req,res)=> {
     const product = await productService.productDetail(req.query.product_id);

@@ -45,11 +45,12 @@ exports.bestsellerProducts=async (from ,to) =>{
 
     var orderDetails = await orderDetailService.listFillterTime((new Date(fromdate)).getTime(), (new Date(todate)).getTime());
 
-   
+   if (orderDetails.length > 0){
      for (let i = orderDetails.length-1; i>=0; i--){
         for (let j = i - 1; j>=0; j--){
-            if ((orderDetails[i].PRODUCT_ID === orderDetails[j].PRODUCT_ID)){
+            if ((i<orderDetails.length) && (orderDetails[i].PRODUCT_ID === orderDetails[j].PRODUCT_ID)){
                 orderDetails[i].QUANTITY += orderDetails[j].QUANTITY;
+                    i--;
                 orderDetails.splice(j, 1);
             }
         }
@@ -64,6 +65,7 @@ exports.bestsellerProducts=async (from ,to) =>{
             }
         }
      }
+    }
 
     return orderDetails;
 };

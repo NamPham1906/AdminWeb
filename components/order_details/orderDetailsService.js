@@ -56,8 +56,8 @@ exports.listFillterTime=(from, to) =>{
     return models.orders_detail.findAll({
         order: [['QUANTITY', 'DESC']],
         include: [{model: models.orders , as: "ORDER",where: {
-            [Op.and]: [{ORDER_DATE: {[Op.gte]: from}}, {ORDER_DATE: {[Op.lte]: to}} ], ISDELETED: false
-          }},{model: models.products , as: "PRODUCT",include: [ {model: models.categories, as: "CATEGORY_CATEGORY"}]} ],
+            [Op.and]: [{ORDER_DATE: {[Op.gte]: from}}, {ORDER_DATE: {[Op.lte]: to}}, {ISDELETED: false} ], 
+          }},{model: models.products , as: "PRODUCT", where: { ISDELETED: false },include: [ {model: models.categories, as: "CATEGORY_CATEGORY"}]} ],
        
           where: {
             ISDELETED: false

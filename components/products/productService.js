@@ -7,6 +7,7 @@ const { Op } = require("sequelize");
 // GET FORM
 exports.listFillter=(page = 0, itemPerPage = 10, product_name = null,category = null,sold = null,quantity = null,cost = null,importer = null,importdate = null) =>{
     return models.products.findAll({
+        include: [ {model: models.categories, as: "CATEGORY_CATEGORY"}, {model: models.admins ,  attributes: ['LASTNAME'],as: "IMPORTER_ADMIN"}  ],
         where: {
             [Op.and]:[
             {PRODUCT_NAME: product_name},
@@ -27,7 +28,7 @@ exports.listFillter=(page = 0, itemPerPage = 10, product_name = null,category = 
     });
 };
 
-exports.list=(page = 0, itemPerPage = 10 ) =>{
+exports.list=(page, itemPerPage) =>{
     return models.products.findAll({
         include: [ {model: models.categories, as: "CATEGORY_CATEGORY"}, {model: models.admins ,  attributes: ['LASTNAME'],as: "IMPORTER_ADMIN"}  ],
         where: {
@@ -39,6 +40,19 @@ exports.list=(page = 0, itemPerPage = 10 ) =>{
         nest : true
     });
 };
+
+
+exports.alllist=() =>{
+    return models.products.findAll({
+        include: [ {model: models.categories, as: "CATEGORY_CATEGORY"}, {model: models.admins ,  attributes: ['LASTNAME'],as: "IMPORTER_ADMIN"}  ],
+        where: {
+            ISDELETED: false
+          },
+        raw:true,
+        nest : true
+    });
+};
+
 
 exports.productDetail=(product_id ="0") =>{
     return models.products.findOne({
