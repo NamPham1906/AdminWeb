@@ -2,7 +2,7 @@ const orderService = require('./ordersService');
 const orderDetailService = require('../order_details/orderDetailsService');
 const accountService = require('../accounts/accountService');
 const deliveryService = require('../deliveries/deliveriesService');
-const billService = require ('../bills/billsService');
+const billService = require ('../bill/billsService');
 
 exports.list = async (req,res)=> {
     const orders = await orderService.list(!isNaN(req.query.page) && req.query.page > 0? req.query.page - 1:0);

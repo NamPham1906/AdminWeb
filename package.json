@@ -5,8 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "start:dev": "DEBUG=nodejs-mysql:* nodemon ./bin/www",
-    "sass": "node-sass public/assets/scss/style.scss -o public/assets/css/ -w",
-    "sasstocsspb": "node-sass public/assets/scss/style.scss public/assets/css/style.css -w"
+    "sass": "sass --watch public/assets/scss/style.scss: public/assets/css/",
+    "sasstocsspb": "sass public/assets/scss/style.scss public/assets/css/style.css -w"
   },
   "dependencies": {
     "@mdi/font": "^4.5.95",
@@ -52,8 +52,8 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "node-sass": "^7.0.1",
     "nodemon": "^2.0.15",
+    "sass": "^1.48.0",
     "sequelize-auto": "^0.8.8"
   }
 }

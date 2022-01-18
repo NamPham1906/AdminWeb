@@ -2,9 +2,8 @@ var express = require('express');
 var router = express.Router();
 const chartController = require('./chartsController');
 
-router.get('/setting', function(req, res, next) {
-  res.render('charts/setting');
-});
+
+router.get('/setting', chartController.chartReport);
 
 router.post('/setting', chartController.timeReport);
 
