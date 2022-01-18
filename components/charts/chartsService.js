@@ -1,14 +1,12 @@
 const orderService = require('../orders/ordersService');
 const orderDetailService = require('../order_details/orderDetailsService');
 var today = new Date();
-var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-var dateTime = date+' '+time;
-
 
 exports.revenue=async (from ,to) =>{
     
-    const orders = await orderService.orderTime((new Date(from)).getTime(), to> today?to:today);
+    to= (new Date(to)).getTime()< today.getTime()?to:today;
+    from = (new Date(from)).getTime() < (new Date(to)).getTime()? from:to;
+    const orders = await orderService.orderTime((new Date(from)).getTime(), (new Date(to)).getTime());
     var revenue = 0;
     
      for (const order of orders) {
@@ -20,20 +18,22 @@ exports.revenue=async (from ,to) =>{
 
 
 exports.totalProducts=async (from ,to) =>{
-    
-    const orders = await orderService.orderTime((new Date(from)).getTime(), to);
-    var revenue = 0;
+    to= (new Date(to)).getTime()< today.getTime()?to:today;
+    from = (new Date(from)).getTime() < (new Date(to)).getTime()? from:to;
+    const orders = await orderService.orderTime((new Date(from)).getTime(), (new Date(to)).getTime());
+    var totalProduct = 0;
     
      for (const order of orders) {
-        revenue += await orderDetailService.totalProducts(order.ORDER_ID);
+        totalProduct += await orderDetailService.totalProducts(order.ORDER_ID);
      }
     
-    return revenue;
+    return totalProduct;
 };
 
 exports.totalOrders=async (from ,to) =>{
-    
-    const orders = await orderService.orderTime((new Date(from)).getTime(), to);
+    to= (new Date(to)).getTime()< today.getTime()?to:today;
+    from = (new Date(from)).getTime() < (new Date(to)).getTime()? from:to;
+    const orders = await orderService.orderTime((new Date(from)).getTime(), (new Date(to)).getTime());
     
     
     return orders.length;

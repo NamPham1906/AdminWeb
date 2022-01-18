@@ -9,7 +9,9 @@ exports.timeReport = async (req,res)=> {
     const report = {
         REVENUE: revenue,
         TOTALPRODUCT: totalProduct,
-        TOTALORDER: totalOrder
+        TOTALORDER: totalOrder,
+        FROM: req.body.from,
+        TO: req.body.to
       };
     res.render('charts/setting',  {report});
 }
@@ -28,7 +30,9 @@ exports.chartReport = async (req,res)=> {
     const report = {
         REVENUE: revenue,
         TOTALPRODUCT: totalProduct,
-        TOTALORDER: totalOrder
+        TOTALORDER: totalOrder, 
+        FROM: from,
+        TO: to
       };
     res.render('charts/setting',  {report});
 }
