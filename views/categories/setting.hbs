@@ -21,14 +21,14 @@
                 <thead>
                   <tr>
                     <th>Category Name</th>
-                    <th>Detail</th>
+                    <th style="float: right;margin-right: 50px;" >Detail</th>
                   </tr>
                 </thead>
                 <tbody>
                   {{#each categories}}
                   <tr>
                     <td>{{CATEGORY_NAME}}</td>
-                    <th>
+                    <th style="float: right;">
                       <button type="submit" class="btn btn-primary mr-2 p-0">
                         <a class="text-decoration-none p-4" href="/category/setting/detail?category_id={{CATEGORY_ID}}"> Detail </a>
                       </button>
