@@ -102,26 +102,42 @@ exports.list = async (req,res,next)=> {
             }
         }
     }
+    try {
     const accounts = await accountService.list(currentPage - 1,itemPerPage);
     res.render('accounts/setting', ({ accounts,currentPage, pageArray}));
+    }catch (error) {
+        console.log(error);
+        next(error);
+    }
 }
 
 exports.accountDetail = async (req,res)=> {
+    try{
     const account = await accountService.accountDetail(req.query.account_id);
     var isLockable = true;
     if (res.locals.user.account_id==req.query.account_id){
         isLockable = false;
     }
     res.render('accounts/details',  {account, isLockable} );
+    }catch (error) {
+        console.log(error);
+        next(error);
+    }
 }
 
 exports.accountAdd = async (req,res)=> {
+    try{
     res.render('accounts/add');
+    }catch (error) {
+        console.log(error);
+        next(error);
+    }
 }
 
 
 // POST FORM 
 exports.addAccount = async (req,res)=> {
+    try{
     await accountService.addAccount(
         req.file.filename,
         req.body.username,
@@ -132,11 +148,20 @@ exports.addAccount = async (req,res)=> {
         req.body.dateofbirth,
         req.body.password)
     res.redirect('/account/setting');  
+    }catch (error) {
+        console.log(error);
+        next(error);
+    }
 }
 
 exports.deleteAccount = async (req,res)=> {
+    try{
     await accountService.deleteAccount(req.body.account_id);
     res.redirect('/account/setting');
+    }catch (error) {
+        console.log(error);
+        next(error);
+    }
 }
 
 exports.updateAccount = async (req,res)=> {
