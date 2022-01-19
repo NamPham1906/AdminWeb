@@ -161,18 +161,49 @@ INSERT INTO ADMINS VALUES ("a2ba61aa-6de5-11ec-ae9b-651e6ab7568b","Colin","Delan
 INSERT INTO ADMINS VALUES ("a3ba61aa-6de5-11ec-ae9b-651e6ab7568b","Bryce","Graham","MALE","1988/3/14","brycegraham@gmail.com","/assets/images/accounts/face3.jpg","user03","pass123",false,false);
 INSERT INTO ADMINS VALUES ("a4ba61aa-6de5-11ec-ae9b-651e6ab7568b","Amie","Charla","FEMALE","1991/9/8","amiecharla@gmail.com","/assets/images/accounts/face4.jpg","user04","pass123",false,false);
 
+INSERT INTO ADMINS VALUES ("a5ba61aa-6de5-11ec-ae9b-651e6ab7568b","Amie","Charla","FEMALE","1991/9/8","amiecharla@gmail.com","/assets/images/accounts/face4.jpg","user04","pass123",false,false);
+INSERT INTO ADMINS VALUES ("a6ba61aa-6de5-11ec-ae9b-651e6ab7568b","Amie","Charla","FEMALE","1991/9/8","amiecharla@gmail.com","/assets/images/accounts/face4.jpg","user05","pass123",false,false);
+INSERT INTO ADMINS VALUES ("a7ba61aa-6de5-11ec-ae9b-651e6ab7568b","Amie","Charla","FEMALE","1991/9/8","amiecharla@gmail.com","/assets/images/accounts/face4.jpg","user06","pass123",false,false);
+INSERT INTO ADMINS VALUES ("a8ba61aa-6de5-11ec-ae9b-651e6ab7568b","Amie","Charla","FEMALE","1991/9/8","amiecharla@gmail.com","/assets/images/accounts/face4.jpg","user07","pass123",false,false);
+INSERT INTO ADMINS VALUES ("a9ba61aa-6de5-11ec-ae9b-651e6ab7568b","Amie","Charla","FEMALE","1991/9/8","amiecharla@gmail.com","/assets/images/accounts/face4.jpg","user08","pass123",false,false);
+INSERT INTO ADMINS VALUES ("a10a61aa-6de5-11ec-ae9b-651e6ab7568b","Amie","Charla","FEMALE","1991/9/8","amiecharla@gmail.com","/assets/images/accounts/face4.jpg","user09","pass123",false,false);
+INSERT INTO ADMINS VALUES ("a11a61aa-6de5-11ec-ae9b-651e6ab7568b","Amie","Charla","FEMALE","1991/9/8","amiecharla@gmail.com","/assets/images/accounts/face4.jpg","user10","pass123",false,false);
+INSERT INTO ADMINS VALUES ("a12a61aa-6de5-11ec-ae9b-651e6ab7568b","Amie","Charla","FEMALE","1991/9/8","amiecharla@gmail.com","/assets/images/accounts/face4.jpg","user11","pass123",false,false);
+INSERT INTO ADMINS VALUES ("a13a61aa-6de5-11ec-ae9b-651e6ab7568b","Amie","Charla","FEMALE","1991/9/8","amiecharla@gmail.com","/assets/images/accounts/face4.jpg","user12","pass123",false,false);
+INSERT INTO ADMINS VALUES ("a14a61aa-6de5-11ec-ae9b-651e6ab7568b","Amie","Charla","FEMALE","1991/9/8","amiecharla@gmail.com","/assets/images/accounts/face4.jpg","user13","pass123",false,false);
+INSERT INTO ADMINS VALUES ("a15a61aa-6de5-11ec-ae9b-651e6ab7568b","Amie","Charla","FEMALE","1991/9/8","amiecharla@gmail.com","/assets/images/accounts/face4.jpg","user14","pass123",false,false);
+
 #----------------------------------CLIENTS
 INSERT INTO CLIENTS VALUES ("c1ba61aa-6de5-11ec-ae9b-651e6ab7568b","Diana","Granet","Female","2000/12/12","0909354345","/assets/images/clients/client01.jpg","dianagranet@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false,false);
 INSERT INTO CLIENTS VALUES ("c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","Nicole","Quinn","Female","1995/1/6","0898161616","/assets/images/clients/client02.jpg","nicolequinn@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false,false);
 INSERT INTO CLIENTS VALUES ("c3ba61aa-6de5-11ec-ae9b-651e6ab7568b","Davis","Lambert","Male","1990/4/24","0797645456","/assets/images/clients/client03.jpg","davislambert@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false,false);
 INSERT INTO CLIENTS VALUES ("c4ba61aa-6de5-11ec-ae9b-651e6ab7568b","Cecelia","Brandy","Female","1989/1/18","0808483834","/assets/images/clients/client04.jpg","ceceliabrandy@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false,false);
 INSERT INTO CLIENTS VALUES ("c5ba61aa-6de5-11ec-ae9b-651e6ab7568b","Aria","Brandy","Female","1989/1/12","0803483834","/assets/images/clients/client04.jpg","arialiabrandy@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false,true);
+
+
+INSERT INTO CLIENTS VALUES ("c6ba61aa-6de5-11ec-ae9b-651e6ab7568b","Aria","Brandy","Female","1989/1/12","0803483834","/assets/images/clients/client04.jpg","arialiabrandy@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false,true);
+INSERT INTO CLIENTS VALUES ("c7ba61aa-6de5-11ec-ae9b-651e6ab7568b","Aria","Brandy","Female","1989/1/12","0803483834","/assets/images/clients/client04.jpg","arialiabrandy@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false,true);
+INSERT INTO CLIENTS VALUES ("c8ba61aa-6de5-11ec-ae9b-651e6ab7568b","Aria","Brandy","Female","1989/1/12","0803483834","/assets/images/clients/client04.jpg","arialiabrandy@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false,true);
+INSERT INTO CLIENTS VALUES ("c9ba61aa-6de5-11ec-ae9b-651e6ab7568b","Aria","Brandy","Female","1989/1/12","0803483834","/assets/images/clients/client04.jpg","arialiabrandy@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false,true);
+INSERT INTO CLIENTS VALUES ("c10a61aa-6de5-11ec-ae9b-651e6ab7568b","Aria","Brandy","Female","1989/1/12","0803483834","/assets/images/clients/client04.jpg","arialiabrandy@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false,true);
+INSERT INTO CLIENTS VALUES ("c11a61aa-6de5-11ec-ae9b-651e6ab7568b","Aria","Brandy","Female","1989/1/12","0803483834","/assets/images/clients/client04.jpg","arialiabrandy@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false,true);
+INSERT INTO CLIENTS VALUES ("c12a61aa-6de5-11ec-ae9b-651e6ab7568b","Aria","Brandy","Female","1989/1/12","0803483834","/assets/images/clients/client04.jpg","arialiabrandy@gmail.com","$2b$10$ynlDhgqvyByZBD7w2E.6s.2JjKvRpaiVWryVJoPJveNPCHH4AG5ri",false,true);
 #----------------------------------CATEGORIES
 INSERT INTO categories VALUES ("c1ba61aa-6de5-11ec-ae9b-651e6ab7568b","Fruits",false);
 INSERT INTO categories VALUES ("c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","Vegetable",false);
 INSERT INTO categories VALUES ("c3ba61aa-6de5-11ec-ae9b-651e6ab7568b","Podded Vegetable",false);
 INSERT INTO categories VALUES ("c4ba61aa-6de5-11ec-ae9b-651e6ab7568b","Bulbs",false);
 INSERT INTO categories VALUES ("c5ba61aa-6de5-11ec-ae9b-651e6ab7568b","Root and tuberous",false);
+
+INSERT INTO categories VALUES ("c6ba61aa-6de5-11ec-ae9b-651e6ab7568b","Root and tuberous",false);
+INSERT INTO categories VALUES ("c7ba61aa-6de5-11ec-ae9b-651e6ab7568b","Root and tuberous",false);
+INSERT INTO categories VALUES ("c8ba61aa-6de5-11ec-ae9b-651e6ab7568b","Root and tuberous",false);
+INSERT INTO categories VALUES ("c9ba61aa-6de5-11ec-ae9b-651e6ab7568b","Root and tuberous",false);
+INSERT INTO categories VALUES ("c10a61aa-6de5-11ec-ae9b-651e6ab7568b","Root and tuberous",false);
+INSERT INTO categories VALUES ("c11a61aa-6de5-11ec-ae9b-651e6ab7568b","Root and tuberous",false);
+INSERT INTO categories VALUES ("c12a61aa-6de5-11ec-ae9b-651e6ab7568b","Root and tuberous",false);
+INSERT INTO categories VALUES ("c13a61aa-6de5-11ec-ae9b-651e6ab7568b","Root and tuberous",false);
+
 
 #----------------------------------PRODUCT
 INSERT INTO PRODUCTS VALUES ("ba61aa-6de5-11ec-ae9b-651e6ab7568b01","/assets/images/products/PD-01.jpg","CARROT","c5ba61aa-6de5-11ec-ae9b-651e6ab7568b","IN STOCK",50,50,40,"2021-11-5","a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",
@@ -339,6 +370,17 @@ INSERT INTO ORDERS VALUES ("o10ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-17 0
 INSERT INTO ORDERS VALUES ("o11ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 2:02:31","62 Cong Hoa, Phuong 4, Quan Tan Binh, Ho Chi Minh", "a2ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
 INSERT INTO ORDERS VALUES ("o12ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 18:34:09","23-5 Nguyen Van Cu, Phuong 1, Quan 5, Ho Chi Minh", "a3ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
 
+INSERT INTO ORDERS VALUES ("o13ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 18:34:09","23-5 Nguyen Van Cu, Phuong 1, Quan 5, Ho Chi Minh", "a3ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO ORDERS VALUES ("o14ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 18:34:09","23-5 Nguyen Van Cu, Phuong 1, Quan 5, Ho Chi Minh", "a3ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO ORDERS VALUES ("o15ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 18:34:09","23-5 Nguyen Van Cu, Phuong 1, Quan 5, Ho Chi Minh", "a3ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO ORDERS VALUES ("o16ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 18:34:09","23-5 Nguyen Van Cu, Phuong 1, Quan 5, Ho Chi Minh", "a3ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO ORDERS VALUES ("o17ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 18:34:09","23-5 Nguyen Van Cu, Phuong 1, Quan 5, Ho Chi Minh", "a3ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO ORDERS VALUES ("o18ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 18:34:09","23-5 Nguyen Van Cu, Phuong 1, Quan 5, Ho Chi Minh", "a3ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO ORDERS VALUES ("o19ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 18:34:09","23-5 Nguyen Van Cu, Phuong 1, Quan 5, Ho Chi Minh", "a3ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO ORDERS VALUES ("o20ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 18:34:09","23-5 Nguyen Van Cu, Phuong 1, Quan 5, Ho Chi Minh", "a3ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO ORDERS VALUES ("o21ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 18:34:09","23-5 Nguyen Van Cu, Phuong 1, Quan 5, Ho Chi Minh", "a3ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO ORDERS VALUES ("o22ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-15 18:34:09","23-5 Nguyen Van Cu, Phuong 1, Quan 5, Ho Chi Minh", "a3ba61aa-6de5-11ec-ae9b-651e6ab7568b", "c1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+
 #----------------------------------ORDERS DETAIL
 INSERT INTO ORDERS_DETAIL VALUES ("o1ba61aa-6de5-11ec-ae9b-651e6ab7568b","ba61aa-6de5-11ec-ae9b-651e6ab7568b01",5,200,false);
 INSERT INTO ORDERS_DETAIL VALUES ("o1ba61aa-6de5-11ec-ae9b-651e6ab7568b","ba61aa-6de5-11ec-ae9b-651e6ab7568b02",2,140,false); 
@@ -377,6 +419,17 @@ INSERT INTO DELIVERIES VALUES ("d11ba61aa-6de5-11ec-ae9b-651e6ab7568b","o8ba61aa
 INSERT INTO DELIVERIES VALUES ("d12ba61aa-6de5-11ec-ae9b-651e6ab7568b","o9ba61aa-6de5-11ec-ae9b-651e6ab7568b","c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-21","DELIVERING",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
 INSERT INTO DELIVERIES VALUES ("d13ba61aa-6de5-11ec-ae9b-651e6ab7568b","o10ba61aa-6de5-11ec-ae9b-651e6ab7568b","c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-22","DELIVERING",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
 
+INSERT INTO DELIVERIES VALUES ("d14ba61aa-6de5-11ec-ae9b-651e6ab7568b","o13ba61aa-6de5-11ec-ae9b-651e6ab7568b","c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-22","DELIVERING",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO DELIVERIES VALUES ("d15ba61aa-6de5-11ec-ae9b-651e6ab7568b","o14ba61aa-6de5-11ec-ae9b-651e6ab7568b","c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-22","DELIVERING",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO DELIVERIES VALUES ("d16ba61aa-6de5-11ec-ae9b-651e6ab7568b","o15ba61aa-6de5-11ec-ae9b-651e6ab7568b","c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-22","DELIVERING",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO DELIVERIES VALUES ("d17ba61aa-6de5-11ec-ae9b-651e6ab7568b","o16ba61aa-6de5-11ec-ae9b-651e6ab7568b","c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-22","DELIVERING",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO DELIVERIES VALUES ("d18ba61aa-6de5-11ec-ae9b-651e6ab7568b","o17ba61aa-6de5-11ec-ae9b-651e6ab7568b","c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-22","DELIVERING",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO DELIVERIES VALUES ("d19ba61aa-6de5-11ec-ae9b-651e6ab7568b","o18ba61aa-6de5-11ec-ae9b-651e6ab7568b","c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-22","DELIVERING",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO DELIVERIES VALUES ("d20ba61aa-6de5-11ec-ae9b-651e6ab7568b","o19ba61aa-6de5-11ec-ae9b-651e6ab7568b","c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-22","DELIVERING",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO DELIVERIES VALUES ("d21ba61aa-6de5-11ec-ae9b-651e6ab7568b","o20ba61aa-6de5-11ec-ae9b-651e6ab7568b","c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-22","DELIVERING",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO DELIVERIES VALUES ("d22ba61aa-6de5-11ec-ae9b-651e6ab7568b","o21ba61aa-6de5-11ec-ae9b-651e6ab7568b","c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-22","DELIVERING",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+INSERT INTO DELIVERIES VALUES ("d23ba61aa-6de5-11ec-ae9b-651e6ab7568b","o22ba61aa-6de5-11ec-ae9b-651e6ab7568b","c2ba61aa-6de5-11ec-ae9b-651e6ab7568b","2021-11-22","DELIVERING",null,"a1ba61aa-6de5-11ec-ae9b-651e6ab7568b",false);
+
 #----------------------------------BILLS
 INSERT INTO BILLS VALUES ("o2ba61aa-6de5-11ec-ae9b-651e6ab7568b","cash on delivery", 40, 2, 0,false);
 INSERT INTO BILLS VALUES ("o4ba61aa-6de5-11ec-ae9b-651e6ab7568b","cash on delivery", 10, 2, 0,false);
@@ -391,3 +444,15 @@ INSERT INTO BILLS VALUES ("o10ba61aa-6de5-11ec-ae9b-651e6ab7568b","cash on deliv
 INSERT INTO BILLS VALUES ("o11ba61aa-6de5-11ec-ae9b-651e6ab7568b","cash on delivery", 0, 2, 10,false);
 INSERT INTO BILLS VALUES ("o12ba61aa-6de5-11ec-ae9b-651e6ab7568b","cash on delivery", 0, 2, 20,false);
 
+
+INSERT INTO BILLS VALUES ("o13ba61aa-6de5-11ec-ae9b-651e6ab7568b","cash on delivery", 0, 2, 20,false);
+INSERT INTO BILLS VALUES ("o14ba61aa-6de5-11ec-ae9b-651e6ab7568b","cash on delivery", 0, 2, 20,false);
+INSERT INTO BILLS VALUES ("o15ba61aa-6de5-11ec-ae9b-651e6ab7568b","cash on delivery", 0, 2, 20,false);
+INSERT INTO BILLS VALUES ("o16ba61aa-6de5-11ec-ae9b-651e6ab7568b","cash on delivery", 0, 2, 20,false);
+INSERT INTO BILLS VALUES ("o17ba61aa-6de5-11ec-ae9b-651e6ab7568b","cash on delivery", 0, 2, 20,false);
+INSERT INTO BILLS VALUES ("o18ba61aa-6de5-11ec-ae9b-651e6ab7568b","cash on delivery", 0, 2, 20,false);
+INSERT INTO BILLS VALUES ("o19ba61aa-6de5-11ec-ae9b-651e6ab7568b","cash on delivery", 0, 2, 20,false);
+INSERT INTO BILLS VALUES ("o20ba61aa-6de5-11ec-ae9b-651e6ab7568b","cash on delivery", 0, 2, 20,false);
+INSERT INTO BILLS VALUES ("o21ba61aa-6de5-11ec-ae9b-651e6ab7568b","cash on delivery", 0, 2, 20,false);
+INSERT INTO BILLS VALUES ("o22ba61aa-6de5-11ec-ae9b-651e6ab7568b","cash on delivery", 0, 2, 20,false);
+INSERT INTO BILLS VALUES ("o23ba61aa-6de5-11ec-ae9b-651e6ab7568b","cash on delivery", 0, 2, 20,false);
